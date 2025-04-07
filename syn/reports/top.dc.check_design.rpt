@@ -1,0 +1,546 @@
+ 
+****************************************
+check_design summary:
+Version:     Q-2019.12-SP3
+Date:        Sun Apr  6 23:48:31 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                    177
+    Unconnected ports (LINT-28)                                   177
+
+Cells                                                             162
+    Connected to power or ground (LINT-32)                        153
+    Nets connected to multiple pins on same cell (LINT-33)          9
+
+Nets                                                               24
+    Unloaded nets (LINT-2)                                         24
+--------------------------------------------------------------------------------
+
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_24' driven by pin 'spi_controller/reg_wdata[8]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_23' driven by pin 'spi_controller/reg_wdata[9]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_22' driven by pin 'spi_controller/reg_wdata[10]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_21' driven by pin 'spi_controller/reg_wdata[11]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_20' driven by pin 'spi_controller/reg_wdata[12]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_19' driven by pin 'spi_controller/reg_wdata[13]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_18' driven by pin 'spi_controller/reg_wdata[14]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_17' driven by pin 'spi_controller/reg_wdata[15]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_16' driven by pin 'spi_controller/reg_wdata[16]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_15' driven by pin 'spi_controller/reg_wdata[17]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_14' driven by pin 'spi_controller/reg_wdata[18]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_13' driven by pin 'spi_controller/reg_wdata[19]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_12' driven by pin 'spi_controller/reg_wdata[20]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_11' driven by pin 'spi_controller/reg_wdata[21]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_10' driven by pin 'spi_controller/reg_wdata[22]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_9' driven by pin 'spi_controller/reg_wdata[23]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_8' driven by pin 'spi_controller/reg_wdata[24]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_7' driven by pin 'spi_controller/reg_wdata[25]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_6' driven by pin 'spi_controller/reg_wdata[26]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_5' driven by pin 'spi_controller/reg_wdata[27]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_4' driven by pin 'spi_controller/reg_wdata[28]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_3' driven by pin 'spi_controller/reg_wdata[29]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_2' driven by pin 'spi_controller/reg_wdata[30]' has no loads. (LINT-2)
+Warning: In design 'top', net 'SYNOPSYS_UNCONNECTED_1' driven by pin 'spi_controller/reg_wdata[31]' has no loads. (LINT-2)
+Warning: In design 'spi_interface', port 'clk' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_wdata[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'spi_interface', port 'reg_rdata[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'leak_value[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_3', port 'threshold[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'leak_value[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_0', port 'threshold[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'leak_value[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_1', port 'threshold[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'leak_value[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'lif_neuron_CURRENT_WIDTH10_POTENTIAL_WIDTH16_REFRACTORY_PERIOD8_2', port 'threshold[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'clk' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[31]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[30]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[29]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[28]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[27]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[26]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[25]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[24]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[23]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[22]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[21]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[20]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[19]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[18]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[17]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[16]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[15]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[14]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[13]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[12]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[11]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[10]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[9]' is connected to logic 0. 
+Warning: In design 'top', a pin on submodule 'spi_controller' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'reg_rdata[8]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[15]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[14]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[13]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[12]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[11]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[10]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[9]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[8]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[7]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[6]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[5]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[4]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[3]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[2]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[1]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[0]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[15]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[14]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[13]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[12]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[11]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[10]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[9]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[8]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[7]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[6]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[5]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[4]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[3]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[2]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[1]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_0__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[0]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[15]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[14]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[13]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[12]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[11]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[10]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[9]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[8]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[7]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[6]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[5]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[4]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[3]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[2]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[1]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[0]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[15]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[14]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[13]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[12]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[11]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[10]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[9]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[8]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[7]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[6]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[5]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[4]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[3]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[2]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[1]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_1__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[0]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[15]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[14]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[13]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[12]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[11]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[10]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[9]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[8]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[7]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[6]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[5]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[4]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[3]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[2]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[1]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[0]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[15]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[14]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[13]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[12]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[11]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[10]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[9]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[8]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[7]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[6]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[5]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[4]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[3]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[2]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[1]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_2__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[0]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[15]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[14]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[13]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[12]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[11]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[10]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[9]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[8]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[7]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[6]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[5]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[4]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[3]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[2]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[1]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'leak_value[0]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[15]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[14]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[13]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[12]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[11]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[10]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[9]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[8]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[7]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[6]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[5]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[4]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[3]' is connected to logic 1. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[2]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[1]' is connected to logic 0. 
+Warning: In design 'neural_network', a pin on submodule 'neuron_layer_3__neuron_inst' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'threshold[0]' is connected to logic 0. 
+Warning: In design 'top', the same net is connected to more than one pin on submodule 'spi_controller'. (LINT-33)
+   Net 'n511' is connected to pins 'clk', 'reg_rdata[31]'', 'reg_rdata[30]', 'reg_rdata[29]', 'reg_rdata[28]', 'reg_rdata[27]', 'reg_rdata[26]', 'reg_rdata[25]', 'reg_rdata[24]', 'reg_rdata[23]', 'reg_rdata[22]', 'reg_rdata[21]', 'reg_rdata[20]', 'reg_rdata[19]', 'reg_rdata[18]', 'reg_rdata[17]', 'reg_rdata[16]', 'reg_rdata[15]', 'reg_rdata[14]', 'reg_rdata[13]', 'reg_rdata[12]', 'reg_rdata[11]', 'reg_rdata[10]', 'reg_rdata[9]', 'reg_rdata[8]'.
+Warning: In design 'neural_network', the same net is connected to more than one pin on submodule 'neuron_layer_0__neuron_inst'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'leak_value[15]', 'leak_value[14]'', 'leak_value[13]', 'leak_value[12]', 'leak_value[11]', 'leak_value[10]', 'leak_value[9]', 'leak_value[8]', 'leak_value[7]', 'leak_value[6]', 'leak_value[5]', 'leak_value[4]', 'leak_value[2]', 'leak_value[0]', 'threshold[15]', 'threshold[14]', 'threshold[13]', 'threshold[12]', 'threshold[11]', 'threshold[10]', 'threshold[9]', 'threshold[8]', 'threshold[5]', 'threshold[4]', 'threshold[2]', 'threshold[1]', 'threshold[0]'.
+Warning: In design 'neural_network', the same net is connected to more than one pin on submodule 'neuron_layer_0__neuron_inst'. (LINT-33)
+   Net 'n_Logic1_' is connected to pins 'leak_value[3]', 'leak_value[1]'', 'threshold[7]', 'threshold[6]', 'threshold[3]'.
+Warning: In design 'neural_network', the same net is connected to more than one pin on submodule 'neuron_layer_1__neuron_inst'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'leak_value[15]', 'leak_value[14]'', 'leak_value[13]', 'leak_value[12]', 'leak_value[11]', 'leak_value[10]', 'leak_value[9]', 'leak_value[8]', 'leak_value[7]', 'leak_value[6]', 'leak_value[5]', 'leak_value[4]', 'leak_value[2]', 'leak_value[0]', 'threshold[15]', 'threshold[14]', 'threshold[13]', 'threshold[12]', 'threshold[11]', 'threshold[10]', 'threshold[9]', 'threshold[8]', 'threshold[5]', 'threshold[4]', 'threshold[2]', 'threshold[1]', 'threshold[0]'.
+Warning: In design 'neural_network', the same net is connected to more than one pin on submodule 'neuron_layer_1__neuron_inst'. (LINT-33)
+   Net 'n_Logic1_' is connected to pins 'leak_value[3]', 'leak_value[1]'', 'threshold[7]', 'threshold[6]', 'threshold[3]'.
+Warning: In design 'neural_network', the same net is connected to more than one pin on submodule 'neuron_layer_2__neuron_inst'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'leak_value[15]', 'leak_value[14]'', 'leak_value[13]', 'leak_value[12]', 'leak_value[11]', 'leak_value[10]', 'leak_value[9]', 'leak_value[8]', 'leak_value[7]', 'leak_value[6]', 'leak_value[5]', 'leak_value[4]', 'leak_value[2]', 'leak_value[0]', 'threshold[15]', 'threshold[14]', 'threshold[13]', 'threshold[12]', 'threshold[11]', 'threshold[10]', 'threshold[9]', 'threshold[8]', 'threshold[5]', 'threshold[4]', 'threshold[2]', 'threshold[1]', 'threshold[0]'.
+Warning: In design 'neural_network', the same net is connected to more than one pin on submodule 'neuron_layer_2__neuron_inst'. (LINT-33)
+   Net 'n_Logic1_' is connected to pins 'leak_value[3]', 'leak_value[1]'', 'threshold[7]', 'threshold[6]', 'threshold[3]'.
+Warning: In design 'neural_network', the same net is connected to more than one pin on submodule 'neuron_layer_3__neuron_inst'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'leak_value[15]', 'leak_value[14]'', 'leak_value[13]', 'leak_value[12]', 'leak_value[11]', 'leak_value[10]', 'leak_value[9]', 'leak_value[8]', 'leak_value[7]', 'leak_value[6]', 'leak_value[5]', 'leak_value[4]', 'leak_value[2]', 'leak_value[0]', 'threshold[15]', 'threshold[14]', 'threshold[13]', 'threshold[12]', 'threshold[11]', 'threshold[10]', 'threshold[9]', 'threshold[8]', 'threshold[5]', 'threshold[4]', 'threshold[2]', 'threshold[1]', 'threshold[0]'.
+Warning: In design 'neural_network', the same net is connected to more than one pin on submodule 'neuron_layer_3__neuron_inst'. (LINT-33)
+   Net 'n_Logic1_' is connected to pins 'leak_value[3]', 'leak_value[1]'', 'threshold[7]', 'threshold[6]', 'threshold[3]'.
+1
