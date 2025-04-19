@@ -1,0 +1,161 @@
+  0           0 RESUME                   0
+
+  2           2 LOAD_CONST               0 (0)
+              4 LOAD_CONST               1 (None)
+              6 IMPORT_NAME              0 (numpy)
+              8 STORE_NAME               1 (np)
+
+  3          10 LOAD_CONST               0 (0)
+             12 LOAD_CONST               1 (None)
+             14 IMPORT_NAME              2 (matplotlib.pyplot)
+             16 IMPORT_FROM              3 (pyplot)
+             18 STORE_NAME               4 (plt)
+             20 POP_TOP
+
+  4          22 LOAD_CONST               0 (0)
+             24 LOAD_CONST               1 (None)
+             26 IMPORT_NAME              5 (py_compile)
+             28 STORE_NAME               5 (py_compile)
+
+  6          30 LOAD_CONST               2 (<code object dydt at 0x000001F4634BA870, file "diff_eq.py", line 6>)
+             32 MAKE_FUNCTION            0
+             34 STORE_NAME               6 (dydt)
+
+ 10          36 LOAD_CONST               0 (0)
+             38 STORE_NAME               7 (y0)
+
+ 11          40 LOAD_CONST               0 (0)
+             42 STORE_NAME               8 (t0)
+
+ 12          44 LOAD_CONST               3 (5)
+             46 STORE_NAME               9 (t_end)
+
+ 13          48 LOAD_CONST               4 (0.1)
+             50 STORE_NAME              10 (h)
+
+ 16          52 PUSH_NULL
+             54 LOAD_NAME                1 (np)
+             56 LOAD_ATTR               22 (arange)
+             76 LOAD_NAME                8 (t0)
+             78 LOAD_NAME                9 (t_end)
+             80 LOAD_NAME               10 (h)
+             82 BINARY_OP                0 (+)
+             86 LOAD_NAME               10 (h)
+             88 CALL                     3
+             96 STORE_NAME              12 (t_values)
+
+ 17          98 PUSH_NULL
+            100 LOAD_NAME                1 (np)
+            102 LOAD_ATTR               26 (zeros)
+            122 PUSH_NULL
+            124 LOAD_NAME               14 (len)
+            126 LOAD_NAME               12 (t_values)
+            128 CALL                     1
+            136 CALL                     1
+            144 STORE_NAME              15 (y_values)
+
+ 18         146 LOAD_NAME                7 (y0)
+            148 LOAD_NAME               15 (y_values)
+            150 LOAD_CONST               0 (0)
+            152 STORE_SUBSCR
+
+ 21         156 PUSH_NULL
+            158 LOAD_NAME               16 (range)
+            160 LOAD_CONST               5 (1)
+            162 PUSH_NULL
+            164 LOAD_NAME               14 (len)
+            166 LOAD_NAME               12 (t_values)
+            168 CALL                     1
+            176 CALL                     2
+            184 GET_ITER
+        >>  186 FOR_ITER                38 (to 266)
+            190 STORE_NAME              17 (i)
+
+ 22         192 LOAD_NAME               15 (y_values)
+            194 LOAD_NAME               17 (i)
+            196 LOAD_CONST               5 (1)
+            198 BINARY_OP               10 (-)
+            202 BINARY_SUBSCR
+            206 LOAD_NAME               10 (h)
+            208 PUSH_NULL
+            210 LOAD_NAME                6 (dydt)
+            212 LOAD_NAME               12 (t_values)
+            214 LOAD_NAME               17 (i)
+            216 LOAD_CONST               5 (1)
+            218 BINARY_OP               10 (-)
+            222 BINARY_SUBSCR
+            226 LOAD_NAME               15 (y_values)
+            228 LOAD_NAME               17 (i)
+            230 LOAD_CONST               5 (1)
+            232 BINARY_OP               10 (-)
+            236 BINARY_SUBSCR
+            240 CALL                     2
+            248 BINARY_OP                5 (*)
+            252 BINARY_OP                0 (+)
+            256 LOAD_NAME               15 (y_values)
+            258 LOAD_NAME               17 (i)
+            260 STORE_SUBSCR
+            264 JUMP_BACKWARD           40 (to 186)
+
+ 21     >>  266 END_FOR
+
+ 25         268 PUSH_NULL
+            270 LOAD_NAME                4 (plt)
+            272 LOAD_ATTR               36 (plot)
+            292 LOAD_NAME               12 (t_values)
+            294 LOAD_NAME               15 (y_values)
+            296 LOAD_CONST               6 ('Euler Approximation')
+            298 KW_NAMES                 7 (('label',))
+            300 CALL                     3
+            308 POP_TOP
+
+ 26         310 PUSH_NULL
+            312 LOAD_NAME                4 (plt)
+            314 LOAD_ATTR               38 (xlabel)
+            334 LOAD_CONST               8 ('t')
+            336 CALL                     1
+            344 POP_TOP
+
+ 27         346 PUSH_NULL
+            348 LOAD_NAME                4 (plt)
+            350 LOAD_ATTR               40 (ylabel)
+            370 LOAD_CONST               9 ('y(t)')
+            372 CALL                     1
+            380 POP_TOP
+
+ 28         382 PUSH_NULL
+            384 LOAD_NAME                4 (plt)
+            386 LOAD_ATTR               42 (title)
+            406 LOAD_CONST              10 ('ODE Solution using Euler Method')
+            408 CALL                     1
+            416 POP_TOP
+
+ 29         418 PUSH_NULL
+            420 LOAD_NAME                4 (plt)
+            422 LOAD_ATTR               44 (grid)
+            442 LOAD_CONST              11 (True)
+            444 CALL                     1
+            452 POP_TOP
+
+ 30         454 PUSH_NULL
+            456 LOAD_NAME                4 (plt)
+            458 LOAD_ATTR               46 (legend)
+            478 CALL                     0
+            486 POP_TOP
+
+ 31         488 PUSH_NULL
+            490 LOAD_NAME                4 (plt)
+            492 LOAD_ATTR               48 (show)
+            512 CALL                     0
+            520 POP_TOP
+            522 RETURN_CONST             1 (None)
+
+Disassembly of <code object dydt at 0x000001F4634BA870, file "diff_eq.py", line 6>:
+  6           0 RESUME                   0
+
+  7           2 LOAD_CONST               1 (-2)
+              4 LOAD_FAST                1 (y)
+              6 BINARY_OP                5 (*)
+             10 LOAD_CONST               2 (1)
+             12 BINARY_OP                0 (+)
+             16 RETURN_VALUE
