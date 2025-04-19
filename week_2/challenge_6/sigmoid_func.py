@@ -7,7 +7,7 @@ def sigmoid(x):
 def sigmoid_derivative(x):
     return x * (1 - x)
 
-# 4 input combinations for 2-input logic gates
+# Input combinations
 X = np.array([
     [0, 0],
     [0, 1],
@@ -15,62 +15,64 @@ X = np.array([
     [1, 1]
 ])
 
-# Truth tables
-Y_NAND = np.array([[1], [1], [1], [0]])  # NAND
-Y_XOR = np.array([[0], [1], [1], [0]])   # XOR
+# Target outputs
+Y_NAND = np.array([[1], [1], [1], [0]])
+Y_XOR  = np.array([[0], [1], [1], [0]])
 
-# Train function for a 2-layer neural network
+# 2-layer MLP training function
 def train_gate(X, y, hidden_size=4, epochs=20000, lr=0.05):
     np.random.seed(42)
     input_size = X.shape[1]
     output_size = 1
 
-    # Weight and bias initialization
-    W1 = np.random.randn(input_size, hidden_size)
+    # Xavier initialization
+    W1 = np.random.randn(input_size, hidden_size) * np.sqrt(1. / input_size)
     b1 = np.zeros((1, hidden_size))
-    W2 = np.random.randn(hidden_size, output_size)
+    W2 = np.random.randn(hidden_size, output_size) * np.sqrt(1. / hidden_size)
     b2 = np.zeros((1, output_size))
 
-    # Training loop
     for epoch in range(epochs):
-        # Forward pass
-        hidden_input = np.dot(X, W1) + b1
-        hidden_output = sigmoid(hidden_input)
-        final_input = np.dot(hidden_output, W2) + b2
-        final_output = sigmoid(final_input)
+        # Forward
+        z1 = np.dot(X, W1) + b1
+        a1 = sigmoid(z1)
+        z2 = np.dot(a1, W2) + b2
+        a2 = sigmoid(z2)
 
-        # Backward pass
-        error = y - final_output
-        d_output = error * sigmoid_derivative(final_output)
-        error_hidden = d_output.dot(W2.T)
-        d_hidden = error_hidden * sigmoid_derivative(hidden_output)
+        # Backward
+        error = y - a2
+        d2 = error * sigmoid_derivative(a2)
+        d1 = d2.dot(W2.T) * sigmoid_derivative(a1)
 
-        # Update weights and biases
-        W2 += hidden_output.T.dot(d_output) * lr
-        b2 += np.sum(d_output, axis=0, keepdims=True) * lr
-        W1 += X.T.dot(d_hidden) * lr
-        b1 += np.sum(d_hidden, axis=0, keepdims=True) * lr
+        # Weight updates
+        W2 += a1.T.dot(d2) * lr
+        b2 += np.sum(d2, axis=0, keepdims=True) * lr
+        W1 += X.T.dot(d1) * lr
+        b1 += np.sum(d1, axis=0, keepdims=True) * lr
 
     return W1, b1, W2, b2
 
-# Predict function
+# Prediction function
 def predict_gate(X, W1, b1, W2, b2):
-    hidden = sigmoid(np.dot(X, W1) + b1)
-    output = sigmoid(np.dot(hidden, W2) + b2)
-    return np.round(output), output
+    a1 = sigmoid(np.dot(X, W1) + b1)
+    a2 = sigmoid(np.dot(a1, W2) + b2)
+    return np.round(a2), a2
 
-# --- NAND ---
-print("Predictions after training for NAND:")
+# ---- NAND ----
+print("Training for NAND...")
 W1_nand, b1_nand, W2_nand, b2_nand = train_gate(X, Y_NAND)
 y_pred_nand, y_raw_nand = predict_gate(X, W1_nand, b1_nand, W2_nand, b2_nand)
+
+print("\nPredictions after training for NAND:")
 for i in range(len(X)):
     print(f"Input: {X[i]}, Predicted: {int(y_pred_nand[i][0])}, Raw: {y_raw_nand[i][0]:.4f}")
 
 print("\n" + "-"*50 + "\n")
 
-# --- XOR ---
-print("Predictions after training for XOR:")
+# ---- XOR ----
+print("Training for XOR...")
 W1_xor, b1_xor, W2_xor, b2_xor = train_gate(X, Y_XOR)
 y_pred_xor, y_raw_xor = predict_gate(X, W1_xor, b1_xor, W2_xor, b2_xor)
+
+print("Predictions after training for XOR:")
 for i in range(len(X)):
     print(f"Input: {X[i]}, Predicted: {int(y_pred_xor[i][0])}, Raw: {y_raw_xor[i][0]:.4f}")
