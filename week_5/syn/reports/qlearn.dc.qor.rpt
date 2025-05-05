@@ -1,0 +1,85 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'qlearn' contains 1 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : qor
+Design : qlearn
+Version: Q-2019.12-SP3
+Date   : Sun May  4 21:16:51 2025
+****************************************
+
+
+  Timing Path Group 'clk'
+  -----------------------------------
+  Levels of Logic:              90.00
+  Critical Path Length:         10.59
+  Critical Path Slack:          -0.85
+  Critical Path Clk Period:     10.00
+  Total Negative Slack:       -705.80
+  No. of Violating Paths:     1300.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          4
+  Hierarchical Port Count:        190
+  Leaf Cell Count:               9664
+  Buf/Inv Cell Count:             910
+  Buf Cell Count:                 231
+  Inv Cell Count:                 679
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:      8005
+  Sequential Cell Count:         1659
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:    21067.267021
+  Noncombinational Area: 15183.579511
+  Buf/Inv Area:           1508.852944
+  Total Buffer Area:           587.84
+  Total Inverter Area:         921.02
+  Macro/Black Box Area:      0.000000
+  Net Area:              18458.408132
+  -----------------------------------
+  Cell Area:             36250.846532
+  Design Area:           54709.254664
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:         11386
+  Nets With Violations:             0
+  Max Trans Violations:             0
+  Max Cap Violations:               0
+  -----------------------------------
+
+
+  Hostname: auto.ece.pdx.edu
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    5.57
+  Logic Optimization:                  2.93
+  Mapping Optimization:              103.08
+  -----------------------------------------
+  Overall Compile Time:              150.64
+  Overall Compile Wall Clock Time:   151.45
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.85  TNS: 705.80  Number of Violating Paths: 1300
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1

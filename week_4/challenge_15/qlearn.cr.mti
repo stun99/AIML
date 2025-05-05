@@ -1,0 +1,15 @@
+/u/koushik/AIML/week_4/challenge_15/tb.sv {1 {vlog -work work -vopt -sv -stats=none /u/koushik/AIML/week_4/challenge_15/tb.sv
+QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module tb_qlearn_5x5
+
+Top level modules:
+	tb_qlearn_5x5
+
+} {} {}} /u/koushik/AIML/week_4/challenge_15/qlearn.sv {1 {vlog -work work -vopt -sv -stats=none /u/koushik/AIML/week_4/challenge_15/qlearn.sv
+QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+-- Compiling module qlearn_5x5
+
+Top level modules:
+	qlearn_5x5
+
+} {} {}}

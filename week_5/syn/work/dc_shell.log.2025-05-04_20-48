@@ -1,0 +1,769 @@
+setting auto_restore_mw_cel_lib_setup true
+Initializing gui preferences from file  /u/koushik/.synopsys_dv_prefs.tcl
+dc_shell> set top_design qlearn
+qlearn
+dc_shell> source ../scripts/dc.tcl
+set lib_dir /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib
+# Decoder ring for the libraries
+# You will need to follow another example or look in the library directories to understand.
+# lib_types is used for the dc/dct linking variables and ICC2 NDM lcoations.
+# /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm
+# /          $lib_dir                   /lib/ $lib_type /db_nldm
+# link_library, Target_library use the sub_lib_types and corner variables. 
+# For sub_lib_types and corner:
+# Example:
+#     saed32hvt_ss0p75v125c.db
+#     |sub_lib  corner    .db
+# The current flow tries to find all sub_lib and all corners in all the search paths.  Any match will be put in the library list.
+# Wild cards can be used, but be careful.  Multiple matches can occur in ways you don't want.
+# For the target library, the same method is used as the link library except only HVT and RVT lib_types are used.
+# ICC2 NDM choosing also uses the sub_lib_types so that only the required libraries and extras are not loaded.
+# ORCA
+# The RTL version does not currently have macros
+# The one pulled from a lab does have macros, but no RTL.  Similar to the version with RTL.
+# Below is an effort to get the design pulled from a lap working for ICC2
+# Original lab had sram_lp memories, but the NDMs don't seem to be build correctly for the current libraries.  Converted code to regular SRAMs.
+set top_design qlearn
+qlearn
+set FCL 1
+1
+set add_ios 0
+0
+set pad_design 0
+0
+set design_size {1000 644 }
+1000 644 
+set design_io_border 10
+10
+set dc_floorplanning 1
+1
+set enable_dft  0
+0
+set innovus_enable_manual_macro_placement 1
+1
+set split_constraints 0
+0
+# This is the raw RTL without SRAMS
+#set rtl_list [list [glob /pkgs/synopsys/32_28nm/SAED_EDK32.28nm_REF_v_15032018/SAED32_EDK/references/orca/dc/rtl/*.vhd ] ../rtl/MUX21X2.sv ]
+# This is hacked P&R netlist with SRAMs and test and level shifters removed.
+set rtl_list [list ../rtl/$top_design.sv ]
+../rtl/qlearn.sv
+set slow_corner "ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v"
+ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v
+set fast_corner "ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v"
+ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v
+#set slow_metal 1p9m_Cmax_-40
+#set fast_metal 1p9m_Cmax_-40
+set slow_metal Cmax.tlup_-40
+Cmax.tlup_-40
+set fast_metal Cmin.tlup_40
+Cmin.tlup_40
+set synth_corners $slow_corner
+ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v
+set synth_corners_slow $slow_corner
+ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v
+set synth_corners_fast $fast_corner
+ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v
+set lib_types "stdcell_hvt"
+stdcell_hvt
+# Get just the main standard cells, srams
+set sub_lib_type "saed32hvt_  "
+saed32hvt_  
+set ndm_types "$lib_dir/stdcell_hvt/ndm"
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/ndm
+#set lib_types "$lib_dir/stdcell_hvt/db_nldm $lib_dir/stdcell_lvt/db_nldm $lib_dir/io_std/db_nldm $lib_dir/sram/db_nldm $lib_dir/pll/db_nldm"
+#set ndm_types "$lib_dir/stdcell_lvt/ndm $lib_dir/stdcell_rvt/ndm $lib_dir/stdcell_hvt/ndm $lib_dir/sram/ndm $lib_dir/io_std/ndm  $lib_dir/pll/ndm"
+set lib_types_target "$lib_dir/stdcell_hvt/db_nldm"
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm
+set sub_lib_type "saed32hvt_"
+saed32hvt_
+set sub_lib_type_target "saed32hvt_"
+saed32hvt_
+set synth_corners_target "ss0p95vn40c ss0p75vn40c" 
+ss0p95vn40c ss0p75vn40c
+#set synth_corners_target "ss0p95v125c" 
+set lef_types [list $lib_dir/stdcell_hvt/lef  ]
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/lef
+set sub_lef_type "saed32nm_hvt_.lef "
+saed32nm_hvt_.lef 
+set mwlib_types [list $lib_dir/stdcell_hvt/milkyway  ]
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/milkyway
+set sub_mwlib_type "saed32nm_hvt_*"
+saed32nm_hvt_*
+#set lib_types "stdcell_hvt stdcell_rvt stdcell_lvt sram"
+# Get just the main standard cells, srams
+#set sub_lib_type "saed32?vt_ saed32sram_ saed32?vt_ulvl_ saed32?vt_dlvl_ "
+#set topdir /u/$env(USER)/PSU_RTL2GDS
+set topdir [ lindex [ regexp -inline "(.*)\(syn\|pt\|apr\)" [pwd] ] 1 ]
+/u/koushik/AIML/week_5/
+Warning: No designs to list. (UID-275)
+== ANALYZE autoread all files ==
+
+Starting ANALYZE autoread mode...
+Warning: Defining design library 'WORK' at directory '/u/koushik/AIML/week_5/syn/work/WORK_autoread'. (AUTOREAD-107)
+Information: Adding '/u/koushik/AIML/week_5/syn/rtl/qlearn.sv'.  (AUTOREAD-100)
+Information: Scanning file { qlearn.sv }. (AUTOREAD-303)
+Compiling source file /u/koushik/AIML/week_5/syn/rtl/qlearn.sv
+Presto compilation completed successfully.
+Autoread command completed successfully.
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/dw_foundation.sldb'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.db'
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/gtech.db'
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/standard.sldb'
+  Loading link library 'saed32hvt_ss0p95vn40c'
+  Loading link library 'saed32hvt_ss0p75vn40c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+Warning:  /u/koushik/AIML/week_5/syn/rtl/qlearn.sv:93: signed to unsigned assignment occurs. (VER-318)
+Warning:  /u/koushik/AIML/week_5/syn/rtl/qlearn.sv:165: signed to unsigned conversion occurs. (VER-318)
+
+Statistics for case statements in always block at line 40 in file
+        '/u/koushik/AIML/week_5/syn/rtl/qlearn.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|            62            |     no/auto      |
+|           105            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine qlearn line 40 in file
+                '/u/koushik/AIML/week_5/syn/rtl/qlearn.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        Q_reg        | Flip-flop | 1600  |  Y  | N  | Y  | N  | N  | N  | N  |
+|      done_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|  episode_count_reg  | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      cur_x_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      cur_y_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      new_x_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      new_y_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     action_reg      | Flip-flop |   2   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     reward_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|   is_terminal_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|      state_reg      | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|      lfsr_reg       | Flip-flop |   4   |  Y  | N  | N  | Y  | N  | N  | N  |
+|      lfsr_reg       | Flip-flop |   4   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+Statistics for MUX_OPs
+======================================================
+| block name/line  | Inputs | Outputs | # sel inputs |
+======================================================
+|    qlearn/135    |   4    |   48    |      2       |
+======================================================
+Presto compilation completed successfully. (qlearn)
+Elaborated 1 design.
+Current design is now 'qlearn'.
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+create_clock -name clk -period 10.0 [get_ports clk] 
+1
+set_input_delay 2.0 -clock clk [get_ports reset]
+1
+set_output_delay 2.0 -clock clk [get_ports done]
+1
+set_dont_touch [get_ports reset]
+1
+Current design is 'qlearn'.
+Warning: Dont_touch on net 'reset' may be overridden by compile because it
+        is connected to generic logic. Use all_connected to see net
+        connections. (OPT-461)
+Information: Performing power optimization. (PWR-850)
+Analyzing: "/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.db"
+Analyzing: "/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.db"
+Library analysis succeeded.
+Information: Choosing a test methodology will restrict the optimization of sequential cells. (UIO-12)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | Q-2019.12-DWBB_201912.3 |     *     |
+| Licensed DW Building Blocks        | Q-2019.12-DWBB_201912.3 |     *     |
+============================================================================
+
+Warning: Dont_touch on net 'reset' may be overridden by compile because it
+        is connected to generic logic. Use all_connected to see net
+        connections. (OPT-461)
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 16 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'qlearn'
+
+Warning: Dont_touch on net 'reset' may be overridden by compile because it
+        is connected to generic logic. Use all_connected to see net
+        connections. (OPT-461)
+  Loading target library 'saed32hvt_ss0p75vn40c'
+Loaded alib file './alib-52/saed32hvt_ss0p95vn40c.db.alib'
+Loaded alib file './alib-52/saed32hvt_ss0p75vn40c.db.alib'
+Warning: Operating condition ss0p95vn40c set on design qlearn has different process,
+voltage and temperatures parameters than the parameters at which target library 
+saed32hvt_ss0p75vn40c is characterized. Delays may be inaccurate as a result. (OPT-998)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'qlearn'
+Information: Added key list 'DesignWare' to design 'qlearn'. (DDB-72)
+Information: In design 'qlearn', the register 'reward_reg_15_' is removed because it is merged to 'reward_reg_1_'. (OPT-1215)
+Information: In design 'qlearn', the register 'reward_reg_14_' is removed because it is merged to 'reward_reg_1_'. (OPT-1215)
+Information: In design 'qlearn', the register 'reward_reg_13_' is removed because it is merged to 'reward_reg_1_'. (OPT-1215)
+Information: In design 'qlearn', the register 'reward_reg_12_' is removed because it is merged to 'reward_reg_1_'. (OPT-1215)
+Information: In design 'qlearn', the register 'reward_reg_11_' is removed because it is merged to 'reward_reg_1_'. (OPT-1215)
+Information: In design 'qlearn', the register 'reward_reg_10_' is removed because it is merged to 'reward_reg_1_'. (OPT-1215)
+Information: In design 'qlearn', the register 'reward_reg_9_' is removed because it is merged to 'reward_reg_1_'. (OPT-1215)
+Information: In design 'qlearn', the register 'reward_reg_8_' is removed because it is merged to 'reward_reg_1_'. (OPT-1215)
+Information: In design 'qlearn', the register 'reward_reg_7_' is removed because it is merged to 'reward_reg_1_'. (OPT-1215)
+Information: In design 'qlearn', the register 'reward_reg_6_' is removed because it is merged to 'reward_reg_1_'. (OPT-1215)
+Information: In design 'qlearn', the register 'reward_reg_5_' is removed because it is merged to 'reward_reg_1_'. (OPT-1215)
+Information: In design 'qlearn', the register 'reward_reg_4_' is removed because it is merged to 'reward_reg_1_'. (OPT-1215)
+Information: In design 'qlearn', the register 'reward_reg_3_' is removed because it is merged to 'reward_reg_1_'. (OPT-1215)
+ Implement Synthetic for 'qlearn'.
+  Processing 'qlearn_DW_div_tc_J1_0'
+  Processing 'qlearn_DW01_absval_J1_0'
+  Processing 'qlearn_DW01_inc_J1_1_DW01_inc_J1_0'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'PMT3_HVT' in the library 'saed32hvt_ss0p95vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT2_HVT' in the library 'saed32hvt_ss0p95vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT1_HVT' in the library 'saed32hvt_ss0p95vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT3_HVT' in the library 'saed32hvt_ss0p95vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT2_HVT' in the library 'saed32hvt_ss0p95vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT1_HVT' in the library 'saed32hvt_ss0p95vn40c' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Automatic shift-register identification is enabled for scan. Not all registers will be scan-replaced. (OPT-467)
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Information: Updating design information... (UID-85)
+  Structuring 'qlearn_DW_div_tc_0'
+  Mapping 'qlearn_DW_div_tc_0'
+  Structuring 'qlearn_DW_div_tc_1'
+  Mapping 'qlearn_DW_div_tc_1'
+  Structuring 'qlearn_DW_div_tc_2'
+  Mapping 'qlearn_DW_div_tc_2'
+  Structuring 'qlearn_DW_div_tc_3'
+  Mapping 'qlearn_DW_div_tc_3'
+  Structuring 'qlearn_DW_div_tc_4'
+  Mapping 'qlearn_DW_div_tc_4'
+  Structuring 'qlearn_DW01_absval_0'
+  Mapping 'qlearn_DW01_absval_0'
+  Structuring 'qlearn_DW01_inc_0'
+  Mapping 'qlearn_DW01_inc_0'
+  Mapping 'qlearn_DW01_add_0'
+  Mapping 'qlearn_DW01_add_1'
+  Mapping 'qlearn_DW01_sub_0'
+  Mapping 'qlearn_DW01_add_3'
+  Mapping 'qlearn_DW01_add_10'
+  Mapping 'qlearn_DW01_add_11'
+  Mapping 'qlearn_DW01_add_12'
+  Mapping 'qlearn_DW01_add_13'
+  Mapping 'qlearn_DW01_add_14'
+  Mapping 'qlearn_DW01_add_15'
+  Mapping 'qlearn_DW01_add_16'
+  Mapping 'qlearn_DW01_add_17'
+  Mapping 'qlearn_DW01_add_18'
+  Mapping 'qlearn_DW01_add_19'
+  Mapping 'qlearn_DW01_add_20'
+  Mapping 'qlearn_DW01_add_21'
+  Mapping 'qlearn_DW01_add_22'
+  Mapping 'qlearn_DW01_add_23'
+  Mapping 'qlearn_DW01_add_24'
+  Mapping 'qlearn_DW01_add_25'
+  Mapping 'qlearn_DW01_add_26'
+  Mapping 'qlearn_DW01_add_27'
+  Mapping 'qlearn_DW01_add_28'
+  Mapping 'qlearn_DW01_add_29'
+  Mapping 'qlearn_DW01_add_30'
+  Mapping 'qlearn_DW01_add_31'
+  Mapping 'qlearn_DW01_add_32'
+  Mapping 'qlearn_DW01_add_33'
+  Mapping 'qlearn_DW01_add_34'
+  Mapping 'qlearn_DW01_add_35'
+  Mapping 'qlearn_DW01_add_36'
+  Mapping 'qlearn_DW01_add_37'
+  Mapping 'qlearn_DW01_add_38'
+  Mapping 'qlearn_DW01_add_39'
+  Mapping 'qlearn_DW01_add_40'
+  Mapping 'qlearn_DW01_add_41'
+  Mapping 'qlearn_DW01_add_42'
+  Mapping 'qlearn_DW01_add_43'
+  Mapping 'qlearn_DW01_add_44'
+  Mapping 'qlearn_DW01_add_45'
+  Mapping 'qlearn_DW01_add_46'
+  Mapping 'qlearn_DW01_add_47'
+  Mapping 'qlearn_DW01_add_48'
+  Mapping 'qlearn_DW01_add_49'
+  Mapping 'qlearn_DW01_add_50'
+  Mapping 'qlearn_DW01_add_51'
+  Mapping 'qlearn_DW01_add_52'
+  Mapping 'qlearn_DW01_add_53'
+  Mapping 'qlearn_DW01_add_54'
+  Mapping 'qlearn_DW01_add_55'
+  Mapping 'qlearn_DW01_add_56'
+  Mapping 'qlearn_DW01_add_57'
+  Mapping 'qlearn_DW01_add_58'
+  Mapping 'qlearn_DW_inc_0'
+  Mapping 'qlearn_DW_div_tc_4'
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+  Mapping Optimization (Phase 4)
+  Mapping Optimization (Phase 5)
+  Mapping Optimization (Phase 6)
+  Mapping Optimization (Phase 7)
+  Mapping Optimization (Phase 8)
+  Mapping Optimization (Phase 9)
+  Mapping Optimization (Phase 10)
+  Mapping Optimization (Phase 11)
+  Mapping Optimization (Phase 12)
+  Mapping Optimization (Phase 13)
+  Mapping Optimization (Phase 14)
+  Mapping Optimization (Phase 15)
+  Mapping Optimization (Phase 16)
+  Mapping Optimization (Phase 17)
+  Mapping Optimization (Phase 18)
+  Mapping Optimization (Phase 19)
+  Mapping Optimization (Phase 20)
+  Mapping Optimization (Phase 21)
+  Mapping Optimization (Phase 22)
+  Mapping Optimization (Phase 23)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:03:45   34994.1      2.90    3831.0       6.8                           1520014.2500
+    0:03:46   34975.6      3.13    4206.6       6.8                           1519700.3750
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+  Mapping 'qlearn_DW01_add_109'
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 0.00%
+
+  Beginning Isolate Ports
+  -----------------------
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 0.00%
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:03:48   31955.6      4.07    5580.6     325.9                           1159806.1250
+    0:04:17   32659.5      1.48    1857.2     311.5                           1178710.3750
+    0:04:17   32659.5      1.48    1857.2     311.5                           1178710.3750
+    0:04:18   32658.3      1.48    1857.2     311.5                           1178687.1250
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 0.00%
+    0:04:24   32652.2      1.48    1857.2     311.5                           1178498.7500
+    0:04:25   32650.4      1.48    1857.2     311.5                           1178528.1250
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:04:33   32307.5      1.47    1810.6     138.1                           1155784.3750
+    0:04:35   32355.6      1.46    1800.0     141.8                           1174665.5000
+    0:04:35   32355.6      1.46    1800.0     141.8                           1174665.5000
+    0:04:35   32324.6      1.46    1795.6     123.4                           1166470.8750
+    0:04:35   32324.6      1.46    1795.6     123.4                           1166470.8750
+    0:05:44   32878.4      0.78     784.2     144.1                           1194060.5000
+    0:05:44   32878.4      0.78     784.2     144.1                           1194060.5000
+    0:05:44   32882.9      0.78     785.2     144.1                           1194714.1250
+    0:05:44   32882.9      0.78     785.2     144.1                           1194714.1250
+    0:05:59   32974.9      0.76     764.6     144.1                           1195000.6250
+    0:05:59   32974.9      0.76     764.6     144.1                           1195000.6250
+    0:06:16   33209.8      0.61     569.6     147.6                           1199805.3750
+    0:06:16   33209.8      0.61     569.6     147.6                           1199805.3750
+    0:06:24   33280.2      0.60     559.3     147.6                           1200431.6250
+    0:06:24   33280.2      0.60     559.3     147.6                           1200431.6250
+    0:06:27   33312.2      0.59     541.0     147.6                           1202292.6250
+    0:06:27   33312.2      0.59     541.0     147.6                           1202292.6250
+    0:06:35   33354.9      0.59     540.6     147.6                           1202287.0000
+    0:06:35   33354.9      0.59     540.6     147.6                           1202287.0000
+    0:06:40   33396.0      0.57     513.8     147.6                           1203760.0000
+    0:06:40   33396.0      0.57     513.8     147.6                           1203760.0000
+    0:06:43   33396.0      0.57     513.5     147.6                           1203734.2500
+
+
+  Beginning Design Rule Fixing  (max_transition)  (max_capacitance)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:06:43   33396.0      0.57     513.5     147.6                           1203734.2500
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+    0:06:44   33396.6      0.56     500.3       0.0                           1195766.2500
+    0:07:21   33413.1      0.56     497.6       0.0                           1196624.1250
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:07:21   33413.1      0.56     497.6       0.0                           1196624.1250
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+    0:07:23   32514.4      0.80     813.0       0.0 Q_reg_2__0__1__15_/D      1130281.2500
+    0:07:24   32519.8      0.77     784.6       0.0                           1130372.5000
+    0:07:49   32701.7      0.65     627.6       1.6                           1143656.6250
+    0:07:49   32701.7      0.65     627.6       1.6                           1143656.6250
+    0:07:49   32687.7      0.65     627.6       0.0                           1138759.5000
+    0:07:49   32687.7      0.65     627.6       0.0                           1138759.5000
+    0:07:54   32687.7      0.65     627.6       0.0                           1138759.5000
+    0:07:54   32687.7      0.65     627.6       0.0                           1138759.5000
+    0:07:54   32687.5      0.65     626.2       0.0                           1138702.1250
+    0:07:54   32687.5      0.65     626.2       0.0                           1138702.1250
+    0:08:07   32691.3      0.64     622.9       0.0                           1139166.0000
+    0:08:07   32691.3      0.64     622.9       0.0                           1139166.0000
+    0:08:24   32863.9      0.52     471.3       2.5                           1145963.5000
+    0:08:24   32863.9      0.52     471.3       2.5                           1145963.5000
+    0:08:39   32906.8      0.52     474.5       2.5                           1146489.7500
+    0:08:39   32906.8      0.52     474.5       2.5                           1146489.7500
+    0:08:47   32939.1      0.49     444.5       2.5                           1148103.5000
+    0:08:47   32939.1      0.49     444.5       2.5                           1148103.5000
+    0:08:54   32939.1      0.49     438.0       2.5                           1148269.0000
+    0:08:54   32939.1      0.49     438.0       2.5                           1148269.0000
+    0:09:04   32946.0      0.48     432.1       2.5                           1148577.8750
+    0:09:04   32946.0      0.48     432.1       2.5                           1148577.8750
+    0:09:09   32946.0      0.48     432.1       2.5                           1148577.8750
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:09:09   32946.0      0.48     432.1       2.5                           1148577.8750
+    0:09:10   32618.6      0.59     548.4       0.0                           1122863.2500
+    0:09:10   32613.3      0.56     517.1       0.0                           1124540.3750
+    0:09:11   32593.2      0.56     516.9       0.0                           1124570.6250
+    0:09:11   32593.2      0.56     516.9       0.0                           1124570.6250
+    0:09:11   32604.4      0.56     510.5       0.0                           1126206.3750
+    0:09:12   32556.9      0.56     510.3       0.0                           1124510.5000
+    0:09:38   32677.6      0.47     403.0       7.0                           1139312.0000
+    0:09:38   32677.6      0.47     403.0       7.0                           1139312.0000
+    0:09:39   32676.8      0.46     395.6       7.0                           1139243.8750
+    0:09:39   32676.8      0.46     395.6       7.0                           1139243.8750
+    0:09:39   32675.5      0.47     399.7       7.0                           1139145.3750
+    0:09:40   32619.6      0.47     399.0      16.9                           1129349.6250
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'qlearn' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 1646 load(s), 1 driver(s)
+     Net 'n2932': 3164 load(s), 1 driver(s)
+  Loading target library 'saed32hvt_ss0p75vn40c'
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Writing verilog file '/u/koushik/AIML/week_5/syn/outputs/qlearn.dc.vg'.
+Writing ddc file '../outputs/qlearn.dc.ddc'.
+1
+dc_shell> gui
+Error: ambiguous command 'gui' matched 38 commands:
+        (gui_bin, gui_change_highlight, gui_create_attrgroup ...) (CMD-006)
+dc_shell> gui_start
+Current design is 'qlearn'.
+4.1
+Current design is 'qlearn'.
+dc_shell> 
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/generic.sdb'
+dc_shell> report_timing
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : qlearn
+Version: Q-2019.12-SP3
+Date   : Sun May  4 21:09:22 2025
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: ss0p95vn40c   Library: saed32hvt_ss0p95vn40c
+Wire Load Model Mode: enclosed
+
+  Startpoint: new_y_reg_0_
+              (rising edge-triggered flip-flop clocked by clk)
+  Endpoint: Q_reg_0__0__0__13_
+            (rising edge-triggered flip-flop clocked by clk)
+  Path Group: clk
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  qlearn             35000                 saed32hvt_ss0p95vn40c
+
+  Point                                    Incr       Path
+  -----------------------------------------------------------
+  clock clk (rise edge)                    0.00       0.00
+  clock network delay (ideal)              0.00       0.00
+  new_y_reg_0_/CLK (SDFFARX1_HVT)          0.00 #     0.00 r
+  new_y_reg_0_/Q (SDFFARX1_HVT)            0.31       0.31 r
+  U5526/Y (AND2X1_HVT)                     0.12       0.43 r
+  U5525/Y (INVX2_HVT)                      0.05       0.48 f
+  U4786/Y (OR2X2_HVT)                      0.13       0.61 f
+  U4785/Y (INVX8_HVT)                      0.06       0.66 r
+  U9617/Y (AO22X1_HVT)                     0.14       0.80 r
+  U9618/Y (OR3X1_HVT)                      0.12       0.92 r
+  U4713/Y (NOR4X0_HVT)                     0.18       1.10 f
+  U4712/Y (NAND2X0_HVT)                    0.07       1.17 r
+  U4777/Y (AND3X1_HVT)                     0.16       1.33 r
+  U6771/Y (AND4X1_HVT)                     0.20       1.53 r
+  U9704/Y (OA21X1_HVT)                     0.15       1.68 r
+  U9705/Y (NBUFFX8_HVT)                    0.10       1.78 r
+  U5615/Y (INVX8_HVT)                      0.04       1.82 f
+  U5308/Y (NAND2X0_HVT)                    0.06       1.88 r
+  U5306/Y (AND2X1_HVT)                     0.11       1.99 r
+  U5304/Y (OA21X1_HVT)                     0.12       2.11 r
+  U5316/Y (AO21X1_HVT)                     0.13       2.24 r
+  U5374/Y (AND3X1_HVT)                     0.13       2.37 r
+  U5376/Y (AO22X1_HVT)                     0.16       2.54 r
+  U5375/Y (INVX2_HVT)                      0.08       2.61 f
+  U5237/Y (INVX4_HVT)                      0.05       2.66 r
+  U5379/Y (OA21X1_HVT)                     0.13       2.79 r
+  U5360/Y (NAND2X0_HVT)                    0.07       2.86 f
+  U5358/Y (NAND3X0_HVT)                    0.06       2.92 r
+  U5241/Y (NAND2X0_HVT)                    0.07       2.99 f
+  U5353/Y (NOR3X0_HVT)                     0.17       3.16 r
+  U4692/Y (AO21X1_HVT)                     0.17       3.33 r
+  U4691/Y (INVX4_HVT)                      0.08       3.41 f
+  U4681/Y (NBUFFX2_HVT)                    0.10       3.51 f
+  U4685/Y (NAND2X0_HVT)                    0.05       3.56 r
+  U4684/Y (NAND2X0_HVT)                    0.11       3.67 f
+  U5218/Y (AND2X1_HVT)                     0.15       3.82 f
+  U5063/Y (INVX1_HVT)                      0.04       3.86 r
+  U4706/Y (AND2X1_HVT)                     0.10       3.97 r
+  U4686/Y (NAND3X0_HVT)                    0.13       4.10 f
+  U5557/Y (AND2X1_HVT)                     0.13       4.23 f
+  U7028/Y (OA22X1_HVT)                     0.10       4.33 f
+  U7027/Y (NAND2X0_HVT)                    0.07       4.39 r
+  U5228/Y (AND2X1_HVT)                     0.12       4.52 r
+  U7019/Y (NAND2X0_HVT)                    0.07       4.58 f
+  U4820/Y (OR2X1_HVT)                      0.09       4.68 f
+  U4819/Y (INVX1_HVT)                      0.03       4.71 r
+  U6840/Y (OA21X1_HVT)                     0.13       4.84 r
+  U6424/Y (NBUFFX2_HVT)                    0.09       4.93 r
+  U5281/Y (NAND2X0_HVT)                    0.09       5.02 f
+  U5280/Y (NAND2X0_HVT)                    0.10       5.12 r
+  U5202/Y (OR2X1_HVT)                      0.10       5.22 r
+  U5226/Y (NAND2X0_HVT)                    0.07       5.29 f
+  U5227/Y (NAND2X0_HVT)                    0.11       5.40 r
+  U7210/Y (AO21X1_HVT)                     0.18       5.58 r
+  U7308/Y (NAND2X0_HVT)                    0.08       5.66 f
+  U7143/Y (AO22X1_HVT)                     0.10       5.76 f
+  U7083/Y (NAND2X0_HVT)                    0.05       5.80 r
+  U7081/Y (AO22X1_HVT)                     0.16       5.96 r
+  U4682/Y (INVX1_HVT)                      0.07       6.03 f
+  U5199/Y (NAND2X0_HVT)                    0.07       6.10 r
+  U5196/Y (NAND3X0_HVT)                    0.11       6.20 f
+  U5679/Y (NAND2X0_HVT)                    0.13       6.33 r
+  U5951/Y (NAND2X0_HVT)                    0.10       6.43 f
+  U7504/Y (AND3X1_HVT)                     0.15       6.58 f
+  U7558/Y (NAND2X0_HVT)                    0.08       6.66 r
+  U6177/Y (OR2X1_HVT)                      0.09       6.75 r
+  U5677/Y (AND3X1_HVT)                     0.12       6.87 r
+  U5676/Y (NAND2X0_HVT)                    0.06       6.93 f
+  U5673/Y (AO22X1_HVT)                     0.10       7.03 f
+  U5637/Y (NAND2X0_HVT)                    0.08       7.11 r
+  U4866/Y (NAND3X0_HVT)                    0.10       7.21 f
+  U4865/Y (OR2X2_HVT)                      0.15       7.37 f
+  U6831/Y (AO22X1_HVT)                     0.12       7.49 f
+  U4847/Y (INVX2_HVT)                      0.05       7.54 r
+  U6834/Y (AND2X1_HVT)                     0.09       7.64 r
+  U7110/Y (AO22X1_HVT)                     0.12       7.76 r
+  U6016/Y (AO21X1_HVT)                     0.10       7.86 r
+  U6014/Y (INVX1_HVT)                      0.05       7.91 f
+  U6164/Y (OR3X2_HVT)                      0.15       8.06 f
+  U6833/Y (OA21X1_HVT)                     0.12       8.18 f
+  U5278/Y (AND2X1_HVT)                     0.09       8.27 f
+  U5277/Y (XOR3X1_HVT)                     0.14       8.41 r
+  U5397/Y (OR2X1_HVT)                      0.11       8.52 r
+  U5394/Y (AND2X1_HVT)                     0.10       8.62 r
+  U5330/Y (NAND2X0_HVT)                    0.07       8.70 f
+  U5328/Y (AND3X1_HVT)                     0.15       8.85 f
+  U5665/Y (AND2X1_HVT)                     0.12       8.97 f
+  U5662/Y (XNOR2X2_HVT)                    0.16       9.13 f
+  U7287/Y (OR2X1_HVT)                      0.09       9.22 f
+  U7284/Y (INVX1_HVT)                      0.04       9.25 r
+  U7560/Y (OA21X1_HVT)                     0.11       9.37 r
+  U7430/Y (OA21X1_HVT)                     0.12       9.48 r
+  U7428/Y (OA21X1_HVT)                     0.14       9.62 r
+  U4907/Y (INVX2_HVT)                      0.05       9.67 f
+  U10999/Y (AO21X1_HVT)                    0.12       9.79 f
+  U11001/Y (XNOR2X2_HVT)                   0.18       9.97 r
+  U4836/Y (NBUFFX16_HVT)                   0.12      10.09 r
+  U11029/Y (MUX21X1_HVT)                   0.16      10.25 r
+  Q_reg_0__0__0__13_/D (SDFFARX1_HVT)      0.00      10.25 r
+  data arrival time                                  10.25
+
+  clock clk (rise edge)                   10.00      10.00
+  clock network delay (ideal)              0.00      10.00
+  Q_reg_0__0__0__13_/CLK (SDFFARX1_HVT)
+                                           0.00      10.00 r
+  library setup time                      -0.21       9.79
+  data required time                                  9.79
+  -----------------------------------------------------------
+  data required time                                  9.79
+  data arrival time                                 -10.25
+  -----------------------------------------------------------
+  slack (VIOLATED)                                   -0.47
+
+
+1
+dc_shell> cat ../scripts/dc.tcl
+Error: unknown command 'cat' (CMD-005)
+dc_shell> bash cat ../scripts/dc.tcl
+Error: unknown command 'bash' (CMD-005)
+dc_shell> exec cat ../scripts/dc.tcl
+source -echo -verbose ../../$top_design.design_config.tcl
+
+
+# List all current designs
+set this_design [ list_designs ]
+
+# If there are existing designs reset/remove them
+if { $this_design != 0 } {
+  # To reset the earlier designs
+  reset_design
+  remove_design -designs
+}
+
+if { ! [ info exists top_design ] } {
+   set top_design fifo1
+}
+
+source ../scripts/dc-get-timlibs.tcl
+
+
+# Analyzing the files for the design
+analyze $rtl_list -autoread -define SYNTHESIS
+
+# Elaborate the FIFO design
+elaborate ${top_design} 
+
+if { [ info exists add_ios ] && $add_ios } {
+   source -echo -verbose ../scripts/add_ios.tcl
+   # Source the design dependent code that will put IOs on different sides
+   source ../../$top_design.add_ios.tcl
+}
+
+change_names -rules verilog -hierarchy
+
+# Load the timing and design constraints
+source -echo -verbose ../../constraints/${top_design}.sdc
+
+# any additional non-design specific constraints
+set_max_transition 0.5 [current_design ]
+
+# Duplicate any non-unique modules so details can be different inside for synthesis
+set_dont_use [get_lib_cells */DELLN* ]
+
+uniquify
+
+#compile with ultra features and with scan FFs
+compile_ultra  -scan  -no_autoungroup
+change_names -rules verilog -hierarchy
+
+# output reports
+set stage dc
+report_qor > ../reports/${top_design}.$stage.qor.rpt
+report_constraint -all_viol > ../reports/${top_design}.$stage.constraint.rpt
+report_timing -delay max -input -tran -cross -sig 4 -derate -net -cap  -max_path 10000 -slack_less 0 > ../reports/${top_design}.$stage.timing.max.rpt
+check_timing  > ../reports/${top_design}.$stage.check_timing.rpt
+check_design > ../reports/${top_design}.$stage.check_design.rpt
+check_mv_design  > ../reports/${top_design}.$stage.mvrc.rpt
+
+# output netlist
+write -hier -format verilog -output ../outputs/${top_design}.$stage.vg
+write -hier -format ddc -output ../outputs/${top_design}.$stage.ddc
+save_upf ../outputs/${top_design}.$stage.upf
+
+dc_shell> exit
+
+Memory usage for this session 528 Mbytes.
+Memory usage for this session including child processes 528 Mbytes.
+CPU usage for this session 612 seconds ( 0.17 hours ).
+Elapsed time for this session 1495 seconds ( 0.42 hours ).
+
+Thank you...
+

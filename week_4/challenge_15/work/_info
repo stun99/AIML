@@ -1,0 +1,94 @@
+m255
+K4
+z2
+!s12c _opt1
+Z0 !s99 nomlopt
+!s12c _opt
+R0
+!s11f vlog 2024.2 2024.05, May 20 2024
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z1 d/u/koushik/AIML/week_4/challenge_15
+T_opt
+!s110 1746417883
+VWm?YZ3jID251HoGfN9RZG2
+04 10 4 work qlearn_5x5 fast 0
+=1-5254006cf05e-681838da-ba888-74b
+R0
+Z2 !s12f OEM100
+Z3 !s12b OEM100
+Z4 !s124 OEM100
+Z5 !s135 nogc
+Z6 o-quiet -auto_acc_if_foreign -work work +acc
+Z7 tCvgOpt 0
+n@_opt
+Z8 OL;O;2024.2;79
+R1
+T_opt1
+!s110 1746417955
+V>>:1j5QfUiD?8_X<o>Ecl1
+04 13 4 work tb_qlearn_5x5 fast 0
+=1-5254006cf05e-68183922-cdd80-8b5
+R0
+R2
+R3
+R4
+R5
+R6
+R7
+n@_opt1
+R8
+vqlearn_5x5
+2/u/koushik/AIML/week_4/challenge_15/qlearn.sv
+Z9 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+Z10 !s110 1746417871
+!i10b 1
+!s100 2HEWfgC;Q0iMzKhF4EiJY3
+IinhQBT>CVmL=6lT^AM^Z;2
+S1
+R1
+w1746416607
+8/u/koushik/AIML/week_4/challenge_15/qlearn.sv
+F/u/koushik/AIML/week_4/challenge_15/qlearn.sv
+!i122 0
+L0 1 182
+Z11 VDg1SIo80bB@j0V0VzS_@n1
+Z12 OL;L;2024.2;79
+r1
+!s85 0
+31
+Z13 !s108 1746417871.000000
+!s107 /u/koushik/AIML/week_4/challenge_15/qlearn.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/koushik/AIML/week_4/challenge_15/qlearn.sv|
+!i113 0
+Z14 o-work work -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R7
+vtb_qlearn_5x5
+2/u/koushik/AIML/week_4/challenge_15/tb.sv
+R9
+R10
+!i10b 1
+!s100 RC:[Mn8>?97bHkBanQ;Vz2
+Ij`>EFJ9?z=d:dE7`EPKK80
+S1
+R1
+w1746417756
+8/u/koushik/AIML/week_4/challenge_15/tb.sv
+F/u/koushik/AIML/week_4/challenge_15/tb.sv
+!i122 1
+L0 1 45
+R11
+R12
+r1
+!s85 0
+31
+R13
+!s107 /u/koushik/AIML/week_4/challenge_15/tb.sv|
+!s90 -reportprogress|300|-work|work|-vopt|-sv|-stats=none|/u/koushik/AIML/week_4/challenge_15/tb.sv|
+!i113 0
+R14
+R7

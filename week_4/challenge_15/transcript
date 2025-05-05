@@ -1,0 +1,74 @@
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading project qlearn
+# Compile of qlearn.sv was successful.
+# Compile of tb.sv was successful.
+# 2 compiles, 0 failed with no errors.
+vsim work.qlearn_5x5 -voptargs=+acc
+# vsim work.qlearn_5x5 -voptargs="+acc" 
+# Start time: 21:04:42 on May 04,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "qlearn_5x5(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.qlearn_5x5(fast)
+run -all
+quit -sim
+# End time: 21:05:13 on May 04,2025, Elapsed time: 0:00:31
+# Errors: 0, Warnings: 6
+vsim -voptargs=+acc work.tb_qlearn_5x5
+# vsim -voptargs="+acc" work.tb_qlearn_5x5 
+# Start time: 21:05:54 on May 04,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "qlearn_5x5(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading sv_std.std
+# Loading work.tb_qlearn_5x5(fast)
+# Loading work.qlearn_5x5(fast)
+run -all
+# Training completed. Final Q-values:
+# State (0,0): Q_UP=-2, Q_DOWN=-1, Q_LEFT=-1, Q_RIGHT=-3
+# State (0,1): Q_UP=-1, Q_DOWN=-1, Q_LEFT=-1, Q_RIGHT=-1
+# State (0,2): Q_UP=-1, Q_DOWN=-1, Q_LEFT=-1, Q_RIGHT=-1
+# State (0,3): Q_UP=-1, Q_DOWN=-1, Q_LEFT=-1, Q_RIGHT=-5
+# State (0,4): Q_UP=-1, Q_DOWN=-1, Q_LEFT=-1, Q_RIGHT=-1
+# State (1,0): Q_UP=-4, Q_DOWN=-3, Q_LEFT=-4, Q_RIGHT=-5
+# State (1,1): Q_UP=-1, Q_DOWN=-1, Q_LEFT=0, Q_RIGHT=0
+# State (1,2): Q_UP=-1, Q_DOWN=-1, Q_LEFT=0, Q_RIGHT=0
+# State (1,3): Q_UP=-5, Q_DOWN=-5, Q_LEFT=-5, Q_RIGHT=-5
+# State (1,4): Q_UP=-1, Q_DOWN=-5, Q_LEFT=-1, Q_RIGHT=-1
+# State (2,0): Q_UP=0, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# State (2,1): Q_UP=0, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# State (2,2): Q_UP=0, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# State (2,3): Q_UP=-1, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# State (2,4): Q_UP=-1, Q_DOWN=-1, Q_LEFT=-1, Q_RIGHT=0
+# State (3,0): Q_UP=0, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# State (3,1): Q_UP=0, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# State (3,2): Q_UP=0, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# State (3,3): Q_UP=0, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# State (3,4): Q_UP=0, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# State (4,0): Q_UP=0, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# State (4,1): Q_UP=0, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# State (4,2): Q_UP=0, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# State (4,3): Q_UP=0, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# State (4,4): Q_UP=0, Q_DOWN=0, Q_LEFT=0, Q_RIGHT=0
+# ** Note: $finish    : /u/koushik/AIML/week_4/challenge_15/tb.sv(43)
+#    Time: 25681005 ns  Iteration: 1  Instance: /tb_qlearn_5x5
+# 1
+# Break in Module tb_qlearn_5x5 at /u/koushik/AIML/week_4/challenge_15/tb.sv line 43
+# End time: 21:41:49 on May 04,2025, Elapsed time: 0:35:55
+# Errors: 0, Warnings: 2

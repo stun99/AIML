@@ -1,0 +1,54 @@
+ 
+****************************************
+check_design summary:
+Version:     Q-2019.12-SP3
+Date:        Sun May  4 21:16:53 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     12
+    Unconnected ports (LINT-28)                                    10
+    Feedthrough (LINT-29)                                           2
+
+Cells                                                               9
+    Connected to power or ground (LINT-32)                          6
+    Nets connected to multiple pins on same cell (LINT-33)          3
+
+Nets                                                                2
+    Unloaded nets (LINT-2)                                          2
+--------------------------------------------------------------------------------
+
+Warning: In design 'qlearn', net 'SYNOPSYS_UNCONNECTED_2' driven by pin 'mult_x_14/product[19]' has no loads. (LINT-2)
+Warning: In design 'qlearn', net 'SYNOPSYS_UNCONNECTED_1' driven by pin 'DP_OP_4086_122_1521/O1[0]' has no loads. (LINT-2)
+Warning: In design 'qlearn_DP_OP_4086_122_1521_2', port 'O1[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'qlearn_DW_mult_tc_3', port 'b[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'qlearn_DW_mult_tc_3', port 'b[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'qlearn_DW_mult_tc_3', port 'b[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'qlearn_DW_mult_tc_3', port 'b[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'qlearn_DW_mult_tc_3', port 'b[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'qlearn_DW_mult_tc_3', port 'product[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'qlearn_DW01_add_4', port 'B[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'qlearn_DW01_add_4', port 'CI' is not connected to any nets. (LINT-28)
+Warning: In design 'qlearn_DW01_add_4', port 'CO' is not connected to any nets. (LINT-28)
+Warning: In design 'qlearn_DW_mult_tc_3', input port 'a[2]' is connected directly to output port 'product[2]'. (LINT-29)
+Warning: In design 'qlearn_DW_mult_tc_3', input port 'a[1]' is connected directly to output port 'product[1]'. (LINT-29)
+Warning: In design 'qlearn', a pin on submodule 'mult_x_14' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[4]' is connected to logic 0. 
+Warning: In design 'qlearn', a pin on submodule 'mult_x_14' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[3]' is connected to logic 1. 
+Warning: In design 'qlearn', a pin on submodule 'mult_x_14' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[2]' is connected to logic 0. 
+Warning: In design 'qlearn', a pin on submodule 'mult_x_14' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[1]' is connected to logic 0. 
+Warning: In design 'qlearn', a pin on submodule 'mult_x_14' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'b[0]' is connected to logic 1. 
+Warning: In design 'qlearn', a pin on submodule 'add_x_16' is connected to logic 1 or logic 0. (LINT-32)
+   Pin 'CI' is connected to logic 0. 
+Warning: In design 'qlearn', the same net is connected to more than one pin on submodule 'mult_x_14'. (LINT-33)
+   Net 'n_Logic1_' is connected to pins 'b[3]', 'b[0]''.
+Warning: In design 'qlearn', the same net is connected to more than one pin on submodule 'mult_x_14'. (LINT-33)
+   Net 'n_Logic0_' is connected to pins 'b[2]', 'b[1]''.
+Warning: In design 'qlearn', the same net is connected to more than one pin on submodule 'add_x_16'. (LINT-33)
+   Net 'N2786' is connected to pins 'B[15]', 'B[14]''.
+1

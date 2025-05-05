@@ -1,0 +1,1 @@
+/pkgs/mentor/questa/2024.2/questasim/linux_x86_64/VisualizerRls/bin/viscom -nolock -quiet -jmem_size 393216 work.tb_qlearn_5x5 -quiet -auto_acc_if_foreign -work work +acc -allow_unnamed -o _opt1 -id 1-5254006cf05e-68183922-cdd80-8b5 +__design_bin_path+/u/koushik/AIML/week_4/challenge_15 +__betafsm
