@@ -1,0 +1,9 @@
+We compare two implementations of a 5‑input, 5‑hidden‑neuron, 1‑output feedforward neural network to understand their design and speed. 
+One version is built with CuPy (a NumPy-like GPU array library) and runs on an Nvidia GPU; the other uses PyTorch on CPU with its built‑in autograd.
+CuPy is a “drop‑in” array library for CUDA GPUs, utilizing CUDA libraries like cuBLAS and cuDNN to accelerate computations.
+PyTorch is a high‑performance machine‐learning framework with automatic differentiation (autograd) for backpropagation.
+Both networks have an identical architecture: a fully connected layer of 5 inputs to 5 hidden units (with a nonlinearity), feeding into a 1‑unit output (a standard feedforward setup)
+In each version we train for 10,000 epochs on the same synthetic data, recording wall‐clock time to compare performance.
+
+When I have run for 1000 iterations execution in CPU (1.8 seconds) was faster compared to execution in GPU (3.2 seconds).
+As i have increased the number of iterations from 1000 to 10000 the execution in GPU(12 seconds) was significantly faster compared to CPU(38 seconds) verison.
