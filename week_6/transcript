@@ -1,0 +1,52 @@
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading project qlearn
+# reading /pkgs/mentor/questa/2024.2/questasim/linux_x86_64/../modelsim.ini
+# Loading project challenge_19
+# Compile of lif_neuron.v was successful.
+# Compile of tb__lif_neuron.v was successful.
+# 2 compiles, 0 failed with no errors.
+# Optimization canceled
+vsim work.tb_lif_neuron -voptargs=+acc
+# vsim work.tb_lif_neuron -voptargs="+acc" 
+# Start time: 14:49:16 on May 11,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# Loading work.tb_lif_neuron(fast)
+# Loading work.lif_neuron(fast)
+add wave -r /*
+run -all
+# Time |  in  thr_sel potential spike
+#    0 |   x    x         0      0
+# 15000 |  20    0        20      0
+# 25000 |  20    0        30      0
+# 35000 |  20    0        35      0
+# 45000 |  20    0        37      0
+# 55000 |  20    0        38      0
+# 65000 |  20    0        39      0
+# 115000 |  20    0         0      0
+# 125000 |  26    0        26      0
+# 135000 |  26    0        39      0
+# 145000 |  26    0        45      0
+# 155000 |  26    0        48      0
+# 165000 |  26    0         0      1
+# 175000 |  26    0         0      0
+# 185000 |   0    0         0      0
+# 225000 | 200    1         0      1
+# ** Note: $finish    : /u/koushik/AIML/week_6/tb__lif_neuron.v(77)
+#    Time: 245 ns  Iteration: 0  Instance: /tb_lif_neuron
+# 1
+# Break in Module tb_lif_neuron at /u/koushik/AIML/week_6/tb__lif_neuron.v line 77
