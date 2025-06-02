@@ -1,0 +1,56 @@
+m255
+K4
+z2
+Z0 !s12c _opt
+Z1 !s99 nomlopt
+R0
+R1
+R0
+R1
+!s11f MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/Student/Downloads/spi_cosim/spi_cosim/sim_build
+T_opt
+!s110 1748847804
+VIJSC43iOzjYZjZ=K`3lZ50
+04 9 4 work spi_slave fast 0
+=1-5254006cf05e-683d4cbb-86e00-7d93
+R1
+!s12f OEM100
+!s12b OEM100
+!s124 OEM100
+!s135 nogc
+o-quiet +acc -auto_acc_if_foreign -work top
+Z2 tCvgOpt 0
+n@_opt
+OL;O;2024.2;79
+vspi_slave
+2/home/koushik/common/Downloads/spi_cosim/spi_slave.v
+DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
+!s110 1748847802
+!i10b 1
+!s100 1l=2EFoigFN?n<mMKSf2[2
+IoI_InJI723Rhh6Ck[15c20
+S1
+d/home/koushik/common/Downloads/spi_cosim/sim_build
+w1748847580
+8/home/koushik/common/Downloads/spi_cosim/spi_slave.v
+F/home/koushik/common/Downloads/spi_cosim/spi_slave.v
+!i122 2
+L0 1 33
+VDg1SIo80bB@j0V0VzS_@n1
+OL;L;2024.2;79
+r1
+!s85 0
+31
+!s108 1748847801.000000
+!s107 /home/koushik/common/Downloads/spi_cosim/spi_slave.v|
+!s90 -incr|-work|top|-sv|/home/koushik/common/Downloads/spi_cosim/spi_slave.v|
+!i113 0
+o-work top -sv -L mtiAvm -L mtiRnm -L mtiOvm -L mtiUvm -L mtiUPF -L infact
+R2

@@ -1,0 +1,6 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1748847805" />
+    <testcase name="spi_cosim_test" classname="test_spi" file="/home/koushik/common/Downloads/spi_cosim/test_spi.py" lineno="49" time="0.003804922103881836" sim_time_ns="911.0" ratio_time="239426.71495707752" />
+  </testsuite>
+</testsuites>
