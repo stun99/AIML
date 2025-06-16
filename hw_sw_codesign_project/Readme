@@ -1,0 +1,4 @@
+The coomplete project data is in this directory except the libraries used for performing synthesis and PnR implementation.
+To perform co simulation us can just clone this directory and run the make commands.
+To perform synthesis, enter into syn/work direcotry.
+To perform PnR enter into Pnr/work directory
