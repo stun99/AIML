@@ -1,0 +1,555 @@
+Cadence Genus(TM) Synthesis Solution.
+Copyright 2024 Cadence Design Systems, Inc. All rights reserved worldwide.
+Cadence and the Cadence logo are registered trademarks and Genus is a trademark
+of Cadence Design Systems, Inc. in the United States and other countries.
+
+[15:09:38.350162] Configured Lic search path (23.02-s003): 5280@cadence-lic.cecs.pdx.edu:27000@synopsys-lic.cat.pdx.edu
+
+Version: 23.10-p004_1, built Thu Feb 01 13:43:46 PST 2024
+Options: 
+Date:    Sat Jun 14 15:09:38 2025
+Host:    auto.ece.pdx.edu (x86_64 w/Linux 3.10.0-1160.119.1.el7.x86_64) (1core*32cpus*32physical cpus*Intel Xeon Processor (Cascadelake) 16384KB) (125666820KB)
+PID:     6079
+OS:      CentOS Linux release 7.9.2009 (Core)
+
+Checking out license: Genus_Synthesis
+[15:09:38.178704] Periodic Lic check successful
+[15:09:38.703027] Feature usage summary:
+[15:09:38.703033] Genus_Synthesis
+
+
+
+***********************************************************************************************************
+***********************************************************************************************************
+
+
+
+Finished executable startup (1 second elapsed).
+
+Loading tool scripts...
+Finished loading tool scripts (28 seconds elapsed).
+
+WARNING: This version of the tool is 499 days old.
+@genus:root: 1> set top_design ga_coprocessor
+ga_coprocessor
+@genus:root: 2> source ../scripts/genus.tcl
+Sourcing '../scripts/genus.tcl' (Sat Jun 14 15:11:02 PDT 2025)...
+#@ Begin verbose source ../scripts/genus.tcl
+@file(genus.tcl) 1: history keep 100
+@file(genus.tcl) 2: set_db timing_report_fields "delay arrival transition fanout load cell timing_point"
+  Setting attribute of root '/': 'timing_report_fields' = delay arrival transition fanout load cell timing_point
+@file(genus.tcl) 4: source -echo -verbose ../../$top_design.design_config.tcl
+Sourcing '../../ga_coprocessor.design_config.tcl' (Sat Jun 14 15:11:03 PDT 2025)...
+#@ Begin verbose source ../../ga_coprocessor.design_config.tcl
+@file(ga_coprocessor.design_config.tcl) 1: set lib_dir /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib
+set lib_dir /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib
+@file(ga_coprocessor.design_config.tcl) 28: set top_design ga_coprocessor
+set top_design ga_coprocessor
+@file(ga_coprocessor.design_config.tcl) 29: set FCL 1
+set FCL 1
+@file(ga_coprocessor.design_config.tcl) 30: set add_ios 0
+set add_ios 0
+@file(ga_coprocessor.design_config.tcl) 31: set pad_design 0
+set pad_design 0
+@file(ga_coprocessor.design_config.tcl) 32: set design_size {1000 644 }
+set design_size {1000 644 }
+@file(ga_coprocessor.design_config.tcl) 33: set design_io_border 10
+set design_io_border 10
+@file(ga_coprocessor.design_config.tcl) 34: set dc_floorplanning 1
+set dc_floorplanning 1
+@file(ga_coprocessor.design_config.tcl) 35: set enable_dft  0
+set enable_dft  0
+@file(ga_coprocessor.design_config.tcl) 36: set innovus_enable_manual_macro_placement 1
+set innovus_enable_manual_macro_placement 1
+@file(ga_coprocessor.design_config.tcl) 37: set split_constraints 0
+set split_constraints 0
+@file(ga_coprocessor.design_config.tcl) 42: set rtl_list [list ../rtl/$top_design.sv ]
+set rtl_list [list ../rtl/$top_design.sv ]
+@file(ga_coprocessor.design_config.tcl) 44: set slow_corner "ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v"
+set slow_corner "ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v"
+@file(ga_coprocessor.design_config.tcl) 45: set fast_corner "ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v"
+set fast_corner "ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v"
+@file(ga_coprocessor.design_config.tcl) 48: set slow_metal Cmax.tlup_-40
+set slow_metal Cmax.tlup_-40
+@file(ga_coprocessor.design_config.tcl) 49: set fast_metal Cmin.tlup_40
+set fast_metal Cmin.tlup_40
+@file(ga_coprocessor.design_config.tcl) 50: set synth_corners $slow_corner
+set synth_corners $slow_corner
+@file(ga_coprocessor.design_config.tcl) 51: set synth_corners_slow $slow_corner
+set synth_corners_slow $slow_corner
+@file(ga_coprocessor.design_config.tcl) 52: set synth_corners_fast $fast_corner
+set synth_corners_fast $fast_corner
+@file(ga_coprocessor.design_config.tcl) 54: set lib_types "stdcell_hvt"
+set lib_types "stdcell_hvt"
+@file(ga_coprocessor.design_config.tcl) 56: set sub_lib_type "saed32hvt_  "
+set sub_lib_type "saed32hvt_  "
+@file(ga_coprocessor.design_config.tcl) 57: set ndm_types "$lib_dir/stdcell_hvt/ndm"
+set ndm_types "$lib_dir/stdcell_hvt/ndm"
+@file(ga_coprocessor.design_config.tcl) 62: set lib_types_target "$lib_dir/stdcell_hvt/db_nldm"
+set lib_types_target "$lib_dir/stdcell_hvt/db_nldm"
+@file(ga_coprocessor.design_config.tcl) 63: set sub_lib_type "saed32hvt_"
+set sub_lib_type "saed32hvt_"
+@file(ga_coprocessor.design_config.tcl) 64: set sub_lib_type_target "saed32hvt_"
+set sub_lib_type_target "saed32hvt_"
+@file(ga_coprocessor.design_config.tcl) 65: set synth_corners_target "ss0p95vn40c ss0p75vn40c" 
+set synth_corners_target "ss0p95vn40c ss0p75vn40c" 
+@file(ga_coprocessor.design_config.tcl) 68: set lef_types [list $lib_dir/stdcell_hvt/lef  ]
+set lef_types [list $lib_dir/stdcell_hvt/lef  ]
+@file(ga_coprocessor.design_config.tcl) 69: set sub_lef_type "saed32nm_hvt_.lef "
+set sub_lef_type "saed32nm_hvt_.lef "
+@file(ga_coprocessor.design_config.tcl) 71: set mwlib_types [list $lib_dir/stdcell_hvt/milkyway  ]
+set mwlib_types [list $lib_dir/stdcell_hvt/milkyway  ]
+@file(ga_coprocessor.design_config.tcl) 72: set sub_mwlib_type "saed32nm_hvt_*"
+set sub_mwlib_type "saed32nm_hvt_*"
+@file(ga_coprocessor.design_config.tcl) 79: set topdir [ lindex [ regexp -inline "(.*)\(syn\|pt\|apr\)" [pwd] ] 1 ]
+set topdir [ lindex [ regexp -inline "(.*)\(syn\|pt\|apr\)" [pwd] ] 1 ]
+#@ End verbose source ../../ga_coprocessor.design_config.tcl
+@file(genus.tcl) 6: set designs [get_db designs * ]
+@file(genus.tcl) 7: if { $designs != "" } {
+  delete_obj $designs
+}
+@file(genus.tcl) 11: source ../scripts/genus-get-timlibslefs.tcl
+Sourcing '../scripts/genus-get-timlibslefs.tcl' (Sat Jun 14 15:11:03 PDT 2025)...
+#@ Begin verbose source ../scripts/genus-get-timlibslefs.tcl
+@file(genus-get-timlibslefs.tcl) 9: set search_path ""
+@file(genus-get-timlibslefs.tcl) 10: foreach i $lib_types { lappend search_path $i }
+@file(genus-get-timlibslefs.tcl) 20: set link_library ""
+@file(genus-get-timlibslefs.tcl) 21: foreach i $search_path {
+  foreach k $synth_corners {
+      foreach m $sub_lib_type {
+        foreach j [glob -nocomplain $i/$m$k.lib ] {
+          lappend link_library [file tail $j ]
+        }
+      }
+  }
+}
+@file(genus-get-timlibslefs.tcl) 32: foreach i $lib_types_target { 
+   lappend search_path_target $i 
+   lappend search_path $i 
+}
+@file(genus-get-timlibslefs.tcl) 45: set target_library ""
+@file(genus-get-timlibslefs.tcl) 46: foreach i $search_path_target {
+  foreach k $synth_corners_target {
+      foreach m $sub_lib_type_target {
+        foreach j [glob -nocomplain $i/$m$k.lib ] {
+          lappend target_library [file tail $j ]
+          lappend link_library [file tail $j ]
+        }
+      }
+  }
+}
+@file(genus-get-timlibslefs.tcl) 58: set lef_path ""
+@file(genus-get-timlibslefs.tcl) 59: foreach k $lef_types {
+  foreach m $sub_lef_type {
+    foreach j [glob -nocomplain $k/$m ] {
+      lappend lef_path  $j 
+    }
+  }
+}
+@file(genus-get-timlibslefs.tcl) 69: lappend search_path .
+#@ End verbose source ../scripts/genus-get-timlibslefs.tcl
+@file(genus.tcl) 13: set_db init_lib_search_path $search_path
+  Setting attribute of root '/': 'init_lib_search_path' = stdcell_hvt /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm .
+@file(genus.tcl) 15: set_db library $link_library
+Warning : Missing clock pin in the sequential cell. [LBR-525]
+        : Clock pin absent in sequential cell(s) 'LNANDX1_HVT' (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib, Line 75616)
+        : Sequential timing checks, such as 'setup_rising' or 'hold_rising', on flop and latch cells require a clock pin. Verify that the 'clock' attribute of the clock pin is set to 'true' or that the clock pin has a 'clocked_on' attribute.
+Warning : Missing clock pin in the sequential cell. [LBR-525]
+        : Clock pin absent in sequential cell(s) 'LNANDX2_HVT' (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib, Line 75955)
+Warning : An attribute is used before it is defined. [LBR-511]
+        : The library level attribute default_operating_conditions on line 226348 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+Warning : An attribute is used before it is defined. [LBR-511]
+        : The library level attribute default_wire_load on line 226349 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+Warning : An attribute is used before it is defined. [LBR-511]
+        : The library level attribute default_wire_load_selection on line 226350 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.lib)
+Warning : Missing clock pin in the sequential cell. [LBR-525]
+        : Clock pin absent in sequential cell(s) 'LNANDX1_HVT' (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib, Line 75714)
+Warning : Missing clock pin in the sequential cell. [LBR-525]
+        : Clock pin absent in sequential cell(s) 'LNANDX2_HVT' (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib, Line 76053)
+Warning : An attribute is used before it is defined. [LBR-511]
+        : The library level attribute default_operating_conditions on line 226791 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+Warning : An attribute is used before it is defined. [LBR-511]
+        : The library level attribute default_wire_load on line 226792 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+Warning : An attribute is used before it is defined. [LBR-511]
+        : The library level attribute default_wire_load_selection on line 226793 is defined after at least one cell definition. The attribute will be ignored. (File /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.lib)
+
+  Message Summary for Library both libraries:
+  *******************************************
+  Missing clock pin in the sequential cell. [LBR-525]: 4
+  Missing a function attribute in the output pin definition. [LBR-518]: 128
+  An attribute is used before it is defined. [LBR-511]: 6
+  An unsupported construct was detected in this library. [LBR-40]: 34
+  *******************************************
+ 
+Warning : Libraries have inconsistent nominal operating conditions. In the Liberty library, there are attributes called nom_voltage, nom_process and nom_temperature. Genus reports the message, if the respective values of the 2 given .libs differ. [LBR-38]
+        : The libraries are 'saed32hvt_ss0p95vn40c' and 'saed32hvt_ss0p75vn40c'.
+        : This is a common source of delay calculation confusion and should be avoided.
+LBR_SCALING: Non-trilib voltage scaling version is identified
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (0.990000, 0.950000, -40.000000) in library 'saed32hvt_ss0p95vn40c.lib'.
+        : The nominal operating condition is represented, either by the nominal PVT values specified in the library source (via nom_process,nom_voltage and nom_temperature respectively), or by the default PVT values (1.0,1.0,1.0).
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA_HVT' must have an output pin.
+        : Add the missing output pin(s), then reload the library. Else the library cell will be marked as timing model i.e. unusable. Timing_model means that the cell does not have any defined function. If there is no output pin, Genus will mark library cell as unusable i.e. the attribute 'usable' will be marked to 'false' on the libcell. Therefore, the cell is not used for mapping and it will not be picked up from the library for synthesis. If you query the attribute 'unusable_reason' on the libcell; result will be: 'Library cell has no output pins.'Note: The message LBR-9 is only for the logical pins and not for the power_ground pins. Genus will depend upon the output function defined in the pin group (output pin) of the cell, to use it for mapping. The pg_pin will not have any function defined.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'ANTENNA_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BUSKP_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'BUSKP_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'CLOAD1_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'CLOAD1_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DCAP_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DHFILLH2_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DHFILLH2_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DHFILLHL2_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DHFILLHL2_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DHFILLHLHLS11_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'DHFILLHLHLS11_HVT' must have an output pin.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFNSRARX1_HVT'.  Ignoring the test_cell.
+        : Review the definition of the test_cell's function or its parent library-cell's function.  An inconsistency between the two may exist.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFNSRARX2_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFNSRASX1_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFNSRASX2_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFNSRX1_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFNSRX2_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFSRARX1_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFSRARX2_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFSRASX1_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFSRASX2_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFSRSSRX1_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFSRSSRX2_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFSRX1_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'RSDFFSRX2_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'SDFFSSRX1_HVT'.  Ignoring the test_cell.
+Warning : Malformed test_cell. [LBR-64]
+        : Unusable test_cell in 'SDFFSSRX2_HVT'.  Ignoring the test_cell.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'SHFILL128_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'SHFILL128_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'SHFILL1_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'SHFILL1_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'SHFILL2_HVT' must have an output pin.
+Warning : Library cell has no output pins defined. [LBR-9]
+        : Library cell 'SHFILL2_HVT' must have an output pin.
+Warning : Maximum message print count reached. [MESG-11]
+        : Maximum print count of '20' reached for message 'LBR-9'.
+Info    : Created nominal operating condition. [LBR-412]
+        : Operating condition '_nominal_' was created for the PVT values (0.990000, 0.750000, -40.000000) in library 'saed32hvt_ss0p75vn40c.lib'.
+  Setting attribute of root '/': 'library' = saed32hvt_ss0p95vn40c.lib saed32hvt_ss0p75vn40c.lib
+@file(genus.tcl) 17: set_db dft_opcg_domain_blocking true
+  Setting attribute of root '/': 'dft_opcg_domain_blocking' = true
+@file(genus.tcl) 19: set_db auto_ungroup none
+  Setting attribute of root '/': 'auto_ungroup' = none
+@file(genus.tcl) 23: read_hdl -language sv ../rtl/${top_design}.sv
+function [7:0] random_char;
+         |
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '../rtl/ga_coprocessor.sv' on line 87, column 10.
+        : Use the 'automatic' keyword for declaring functions and tasks.
+@file(genus.tcl) 35: elaborate $top_design
+Info    : Libraries are valid for scaling. [LBR-556]
+        : The voltage '0.950000' is within the characterized range (0.750000, 0.950000) for library 'saed32hvt_ss0p95vn40c'.
+        : The voltage will be scaled between the given range.
+Warning : Missing an incoming setup timing arc for next_state library pin. [LBR-34]
+        : Library pin 'RDFFNX1_HVT/D' has no incoming setup arc.
+        : Pin used in a next_state function must have an incoming setup timing arc. Otherwise, the library cell will be treated as a timing model.
+Warning : Missing an incoming setup timing arc for next_state library pin. [LBR-34]
+        : Library pin 'RDFFNX2_HVT/D' has no incoming setup arc.
+Warning : Missing an incoming setup timing arc for next_state library pin. [LBR-34]
+        : Library pin 'RDFFX1_HVT/D' has no incoming setup arc.
+Warning : Missing an incoming setup timing arc for next_state library pin. [LBR-34]
+        : Library pin 'RDFFX2_HVT/D' has no incoming setup arc.
+Warning : Missing an incoming setup timing arc for next_state library pin. [LBR-34]
+        : Library pin 'RSDFFNSRX1_HVT/D' has no incoming setup arc.
+Warning : Missing an incoming setup timing arc for next_state library pin. [LBR-34]
+        : Library pin 'RSDFFNSRX1_HVT/SE' has no incoming setup arc.
+Warning : Missing an incoming setup timing arc for next_state library pin. [LBR-34]
+        : Library pin 'RSDFFNSRX1_HVT/SI' has no incoming setup arc.
+Warning : Missing an incoming setup timing arc for next_state library pin. [LBR-34]
+        : Library pin 'RSDFFNSRX2_HVT/D' has no incoming setup arc.
+Warning : Missing an incoming setup timing arc for next_state library pin. [LBR-34]
+        : Library pin 'RSDFFNSRX2_HVT/SE' has no incoming setup arc.
+Warning : Missing an incoming setup timing arc for next_state library pin. [LBR-34]
+        : Library pin 'RSDFFNSRX2_HVT/SI' has no incoming setup arc.
+  Library has 130 usable logic and 108 usable sequential lib-cells.
+Info    : Elaborating Design. [ELAB-1]
+        : Elaborating top-level block 'ga_coprocessor' from file '../rtl/ga_coprocessor.sv'.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'current_operation' in module 'ga_coprocessor' in file '../rtl/ga_coprocessor.sv' on line 133.
+        : Genus removes the flip-flop or latch inferred for an unused signal or variable. To preserve the flip-flop or latch, set the hdl_preserve_unused_registers attribute to true or use a pragma in the RTL.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'stored_mutate_chromosome' in module 'ga_coprocessor' in file '../rtl/ga_coprocessor.sv' on line 155.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'stored_crossover_seed' in module 'ga_coprocessor' in file '../rtl/ga_coprocessor.sv' on line 148.
+Warning : Removing unused register. [CDFG-508]
+        : Removing unused flip-flop register 'stored_mutation_seed' in module 'ga_coprocessor' in file '../rtl/ga_coprocessor.sv' on line 156.
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/pkgs/cadence/2024-03/DDI231/GENUS231/tools.lnx86/lib/chipware/syn/CW/CW_div_k_arch_3.v' on line 1, column 21.
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/pkgs/cadence/2024-03/DDI231/GENUS231/tools.lnx86/lib/chipware/syn/CW/CW_div_k_arch_3.v' on line 1, column 29.
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/pkgs/cadence/2024-03/DDI231/GENUS231/tools.lnx86/lib/chipware/syn/CW/CW_div_k_arch_3.v' on line 1, column 32.
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/pkgs/cadence/2024-03/DDI231/GENUS231/tools.lnx86/lib/chipware/syn/CW/CW_div_k_arch_3.v' on line 1, column 21.
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/pkgs/cadence/2024-03/DDI231/GENUS231/tools.lnx86/lib/chipware/syn/CW/CW_div_k_arch_3.v' on line 1, column 14.
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/pkgs/cadence/2024-03/DDI231/GENUS231/tools.lnx86/lib/chipware/syn/CW/CW_div_k_arch_3.v' on line 1, column 14.
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/pkgs/cadence/2024-03/DDI231/GENUS231/tools.lnx86/lib/chipware/syn/CW/CW_div_k_arch_3.v' on line 1, column 14.
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/pkgs/cadence/2024-03/DDI231/GENUS231/tools.lnx86/lib/chipware/syn/CW/CW_div_k_arch_3.v' on line 1, column 14.
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/pkgs/cadence/2024-03/DDI231/GENUS231/tools.lnx86/lib/chipware/syn/CW/CW_div_k_arch_3.v' on line 1, column 14.
+Warning : Usage of non-static tasks or functions might result in simulation-synthesis mismatch. [VLOGPT-692]
+        : in file '/pkgs/cadence/2024-03/DDI231/GENUS231/tools.lnx86/lib/chipware/syn/CW/CW_div_k_arch_3.v' on line 1, column 14.
+Info    : Done Elaborating Design. [ELAB-3]
+        : Done elaborating 'ga_coprocessor'.
+Checking for analog nets...
+Check completed for analog nets.
+Checking for source RTL...
+Check completed for source RTL.
+Running Unified Mux Engine Tricks...
+Completed Unified Mux Engine Tricks
+
+Stage: post_elab
+-------------------------------------------------------
+| Trick             | Accepts | Rejects | Runtime (s) | 
+-------------------------------------------------------
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+| ume_merge         |       0 |       0 |        0.00 | 
+| ume_ssm           |      38 |       0 |        0.01 | 
+| ume_cse           |       1 |       0 |        0.01 | 
+| ume_shrink        |       0 |       0 |        0.00 | 
+| ume_sweep         |       0 |       0 |        0.00 | 
+| ume_constant_bmux |       0 |       0 |        0.00 | 
+| ume_merge         |       0 |       0 |        0.00 | 
+| ume_ssm           |       0 |       0 |        0.00 | 
+| ume_cse           |       0 |       0 |        0.00 | 
+| ume_shrink        |       0 |       0 |        0.00 | 
+| ume_sweep         |       0 |       0 |        0.00 | 
+-------------------------------------------------------
+Starting optimize datapath shifters [v1.0] (stage: post_elab, startdef: ga_coprocessor, recur: true)
+Completed optimize datapath shifters (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip mux common data inputs [v1.0] (stage: post_elab, startdef: ga_coprocessor, recur: true)
+Completed clip mux common data inputs (accepts: 0, rejects: 0, runtime: 0.000s)
+Starting clip the non-user hierarchies [v2.0] (stage: post_elab, startdef: ga_coprocessor, recur: true)
+Completed clip the non-user hierarchies (accepts: 2, rejects: 0, runtime: 0.021s)
+Starting basic netlist cleanup [v1.0] (stage: post_elab, startdef: ga_coprocessor, recur: true)
+Completed basic netlist cleanup (accepts: 0, rejects: 0, runtime: 0.000s)
+
+Stage: post_elab
+--------------------------------------------------------------------
+| Transform                      | Accepts | Rejects | Runtime (s) | 
+--------------------------------------------------------------------
+| hlo_optimize_datapath_shifters |       0 |       0 |        0.00 | 
+| hlo_clip_mux_input             |       0 |       0 |        0.00 | 
+| hlo_clip                       |       2 |       0 |        0.02 | 
+| hlo_cleanup                    |       0 |       0 |        0.00 | 
+--------------------------------------------------------------------
+UM:   flow.cputime  flow.realtime  timing.setup.tns  timing.setup.wns  snapshot
+UM:*                                                                   elaborate
+@file(genus.tcl) 43: update_names -map { {"." "_" }} -inst -force
+Warning : Port names affected by this command do not automatically get updated in written out SV wrapper module. [CHNM-108] [update_names]
+        : If user is setting  write_sv_port_wrapper = true then the port names affected by usage of update_names  
+      need to be updated manually in the written out SV wrapper module.
+        : If user is setting write_sv_port_wrapper = true then the port names affected by this command need to be updated manually in the written out SV wrapper module.
+@file(genus.tcl) 44: update_names -map {{"[" "_"} {"]" "_"}} -inst -force
+Warning : Port names affected by this command do not automatically get updated in written out SV wrapper module. [CHNM-108] [update_names]
+        : If user is setting  write_sv_port_wrapper = true then the port names affected by usage of update_names  
+      need to be updated manually in the written out SV wrapper module.
+@file(genus.tcl) 45: update_names -map {{"[" "_"} {"]" "_"}} -port_bus
+Warning : Port names affected by this command do not automatically get updated in written out SV wrapper module. [CHNM-108] [update_names]
+        : If user is setting  write_sv_port_wrapper = true then the port names affected by usage of update_names  
+      need to be updated manually in the written out SV wrapper module.
+@file(genus.tcl) 46: update_names -map {{"[" "_"} {"]" "_"}} -hport_bus
+Warning : Port names affected by this command do not automatically get updated in written out SV wrapper module. [CHNM-108] [update_names]
+        : If user is setting  write_sv_port_wrapper = true then the port names affected by usage of update_names  
+      need to be updated manually in the written out SV wrapper module.
+@file(genus.tcl) 47: update_names -inst -hnet -restricted {[} -convert_string "_"
+Warning : Option 'convert_string' is obsolete. [CHNM-107] [update_names]
+        : Option 'convert_string' has been replaced by 'replace_str'.
+        : The obsolete option still works in this release, but to avoid this warning and to ensure compatibility with future releases, update your script to use new option.
+Warning : Port names affected by this command do not automatically get updated in written out SV wrapper module. [CHNM-108] [update_names]
+        : If user is setting  write_sv_port_wrapper = true then the port names affected by usage of update_names  
+      need to be updated manually in the written out SV wrapper module.
+@file(genus.tcl) 48: update_names -inst -hnet -restricted {]} -convert_string "_"
+Warning : Option 'convert_string' is obsolete. [CHNM-107] [update_names]
+        : Option 'convert_string' has been replaced by 'replace_str'.
+Warning : Port names affected by this command do not automatically get updated in written out SV wrapper module. [CHNM-108] [update_names]
+        : If user is setting  write_sv_port_wrapper = true then the port names affected by usage of update_names  
+      need to be updated manually in the written out SV wrapper module.
+@file(genus.tcl) 52: source -echo -verbose ../../constraints/${top_design}.sdc
+Sourcing '../../constraints/ga_coprocessor.sdc' (Sat Jun 14 15:11:06 PDT 2025)...
+#@ Begin verbose source ../../constraints/ga_coprocessor.sdc
+@file(ga_coprocessor.sdc) 1: create_clock -name sys_clk -period 10.0 [get_ports clk]
+create_clock -name sys_clk -period 10.0 [get_ports clk]
+@file(ga_coprocessor.sdc) 3: set_clock_uncertainty 0.2 [get_clocks sys_clk]
+set_clock_uncertainty 0.2 [get_clocks sys_clk]
+@file(ga_coprocessor.sdc) 4: set_clock_transition 0.1 [get_clocks sys_clk]
+set_clock_transition 0.1 [get_clocks sys_clk]
+@file(ga_coprocessor.sdc) 7: set_clock_latency -source 1.0 [get_clocks sys_clk]
+set_clock_latency -source 1.0 [get_clocks sys_clk]
+@file(ga_coprocessor.sdc) 10: set_input_delay -clock sys_clk 2.0 [get_ports rst_n]
+set_input_delay -clock sys_clk 2.0 [get_ports rst_n]
+@file(ga_coprocessor.sdc) 14: set_input_delay -clock sys_clk 2.0 [get_ports start]
+set_input_delay -clock sys_clk 2.0 [get_ports start]
+@file(ga_coprocessor.sdc) 15: set_input_delay -clock sys_clk 2.0 [get_ports operation_valid]
+set_input_delay -clock sys_clk 2.0 [get_ports operation_valid]
+@file(ga_coprocessor.sdc) 16: set_input_delay -clock sys_clk 2.0 [get_ports operation]
+set_input_delay -clock sys_clk 2.0 [get_ports operation]
+@file(ga_coprocessor.sdc) 19: set_input_delay -clock sys_clk 3.0 [get_ports chromosome_in]
+set_input_delay -clock sys_clk 3.0 [get_ports chromosome_in]
+@file(ga_coprocessor.sdc) 20: set_input_delay -clock sys_clk 3.0 [get_ports target_string]
+set_input_delay -clock sys_clk 3.0 [get_ports target_string]
+@file(ga_coprocessor.sdc) 23: set_input_delay -clock sys_clk 3.0 [get_ports parent1]
+set_input_delay -clock sys_clk 3.0 [get_ports parent1]
+@file(ga_coprocessor.sdc) 24: set_input_delay -clock sys_clk 3.0 [get_ports parent2]
+set_input_delay -clock sys_clk 3.0 [get_ports parent2]
+@file(ga_coprocessor.sdc) 25: set_input_delay -clock sys_clk 2.5 [get_ports crossover_seed]
+set_input_delay -clock sys_clk 2.5 [get_ports crossover_seed]
+@file(ga_coprocessor.sdc) 27: set_input_delay -clock sys_clk 3.0 [get_ports chromosome_to_mutate]
+set_input_delay -clock sys_clk 3.0 [get_ports chromosome_to_mutate]
+@file(ga_coprocessor.sdc) 28: set_input_delay -clock sys_clk 2.5 [get_ports mutation_seed]
+set_input_delay -clock sys_clk 2.5 [get_ports mutation_seed]
+@file(ga_coprocessor.sdc) 29: set_input_delay -clock sys_clk 2.0 [get_ports mutation_rate]
+set_input_delay -clock sys_clk 2.0 [get_ports mutation_rate]
+@file(ga_coprocessor.sdc) 32: set_output_delay -clock sys_clk 2.0 [get_ports fitness_out]
+set_output_delay -clock sys_clk 2.0 [get_ports fitness_out]
+@file(ga_coprocessor.sdc) 33: set_output_delay -clock sys_clk 3.5 [get_ports offspring_out]
+set_output_delay -clock sys_clk 3.5 [get_ports offspring_out]
+@file(ga_coprocessor.sdc) 34: set_output_delay -clock sys_clk 3.5 [get_ports mutated_out]
+set_output_delay -clock sys_clk 3.5 [get_ports mutated_out]
+@file(ga_coprocessor.sdc) 37: set_output_delay -clock sys_clk 1.5 [get_ports result_valid]
+set_output_delay -clock sys_clk 1.5 [get_ports result_valid]
+@file(ga_coprocessor.sdc) 38: set_output_delay -clock sys_clk 1.5 [get_ports processing_done]
+set_output_delay -clock sys_clk 1.5 [get_ports processing_done]
+@file(ga_coprocessor.sdc) 39: set_output_delay -clock sys_clk 1.5 [get_ports processing_busy]
+set_output_delay -clock sys_clk 1.5 [get_ports processing_busy]
+@file(ga_coprocessor.sdc) 41: set_load 0.05 [get_ports fitness_out]
+set_load 0.05 [get_ports fitness_out]
+@file(ga_coprocessor.sdc) 42: set_load 0.1 [get_ports {offspring_out mutated_out}]
+set_load 0.1 [get_ports {offspring_out mutated_out}]
+@file(ga_coprocessor.sdc) 43: set_load 0.02 [get_ports {result_valid processing_done processing_busy}]
+set_load 0.02 [get_ports {result_valid processing_done processing_busy}]
+@file(ga_coprocessor.sdc) 47: set_max_delay 8.0 -from [get_ports chromosome_in] -to [get_ports fitness_out]
+set_max_delay 8.0 -from [get_ports chromosome_in] -to [get_ports fitness_out]
+@file(ga_coprocessor.sdc) 48: set_max_delay 8.0 -from [get_ports target_string] -to [get_ports fitness_out]
+set_max_delay 8.0 -from [get_ports target_string] -to [get_ports fitness_out]
+@file(ga_coprocessor.sdc) 51: set_max_delay 8.5 -from [get_ports {parent1 parent2}] -to [get_ports offspring_out]
+set_max_delay 8.5 -from [get_ports {parent1 parent2}] -to [get_ports offspring_out]
+@file(ga_coprocessor.sdc) 54: set_max_delay 8.5 -from [get_ports chromosome_to_mutate] -to [get_ports mutated_out]
+set_max_delay 8.5 -from [get_ports chromosome_to_mutate] -to [get_ports mutated_out]
+@file(ga_coprocessor.sdc) 57: set_max_delay 5.0 -from [get_ports start] -to [get_ports processing_busy]
+set_max_delay 5.0 -from [get_ports start] -to [get_ports processing_busy]
+@file(ga_coprocessor.sdc) 58: set_max_delay 5.0 -from [get_ports start] -to [get_ports processing_done]
+set_max_delay 5.0 -from [get_ports start] -to [get_ports processing_done]
+@file(ga_coprocessor.sdc) 64: set_false_path -from [get_ports rst_n] -to [all_registers]
+set_false_path -from [get_ports rst_n] -to [all_registers]
+@file(ga_coprocessor.sdc) 66: set_false_path -from [get_ports parent1] -to [get_ports {fitness_out mutated_out}]
+set_false_path -from [get_ports parent1] -to [get_ports {fitness_out mutated_out}]
+@file(ga_coprocessor.sdc) 67: set_false_path -from [get_ports parent2] -to [get_ports {fitness_out mutated_out}]
+set_false_path -from [get_ports parent2] -to [get_ports {fitness_out mutated_out}]
+@file(ga_coprocessor.sdc) 68: set_false_path -from [get_ports chromosome_to_mutate] -to [get_ports {fitness_out offspring_out}]
+set_false_path -from [get_ports chromosome_to_mutate] -to [get_ports {fitness_out offspring_out}]
+@file(ga_coprocessor.sdc) 73: set_max_delay 7.0 -from [get_pins */stored_chromosome_reg*/Q] -to [get_pins */mismatch_count_reg*/D]
+set_max_delay 7.0 -from [get_pins */stored_chromosome_reg*/Q] -to [get_pins */mismatch_count_reg*/D]
+Warning : Could not find requested search value. [SDC-208] [get_pins]
+        : The 'get_pins' command  cannot find any pins named '*/stored_chromosome_reg*/Q'
+        : Use get_* commands to find the objects along with a wild card entry in the name of the object to check if the object is existing with different naming style.
+Warning : Could not find requested search value. [SDC-208] [get_pins]
+        : The 'get_pins' command  cannot find any pins named '*/mismatch_count_reg*/D'
+Error   : A required object parameter could not be found. [TUI-61] [set_mm_delay_fast]
+        : An object of type 'clock|port|inst|hinst|pin|hpin|port_bus|hpin_bus' named '' could not be found.
+        : Check to make sure that the object exists and is of the correct type.  The 'what_is' command can be used to determine the type of an object.
+  set_mm_delay_fast: internal command for set_mm_delay 
+
+Usage: set_mm_delay_fast [-rise] [-fall]
+           [ -from <clock|port|inst|hinst|pin|hpin|port_bus|hpin_bus>+ |
+             -rise_from <clock|port|inst|hinst|pin|hpin|port_bus|hpin_bus>+ |
+             -fall_from <clock|port|inst|hinst|pin|hpin|port_bus|hpin_bus>+ ]
+           [ -to <clock|port|inst|hinst|pin|hpin|port_bus|hpin_bus>+ |
+             -rise_to <clock|port|inst|hinst|pin|hpin|port_bus|hpin_bus>+ |
+             -fall_to <clock|port|inst|hinst|pin|hpin|port_bus|hpin_bus>+ ]
+           [ -through <port|inst|hinst|pin|hpin|hnet|port_bus|hpin_bus>+ |
+             -rise_through <port|inst|hinst|pin|hpin|hnet|port_bus|hpin_bus>+ |
+             -fall_through <port|inst|hinst|pin|hpin|hnet|port_bus|hpin_bus>+ ]+
+           [-comment <string>] [-exception_name <string>] [-combinational_from_to] [-ignore_clock_latency] [-reset_path] <float>
+
+    [-rise]:
+        rise value 
+    [-fall]:
+        fall value 
+    -from <clock|port|inst|hinst|pin|hpin|port_bus|hpin_bus>+:
+        a set of startpoints for the paths 
+    -rise_from <clock|port|inst|hinst|pin|hpin|port_bus|hpin_bus>+:
+        startpoints with a rise transition at the pin itself 
+    -fall_from <clock|port|inst|hinst|pin|hpin|port_bus|hpin_bus>+:
+        startpoints with a fall transition at the pin itself 
+    -to <clock|port|inst|hinst|pin|hpin|port_bus|hpin_bus>+:
+        a set of endpoints for the paths 
+    -rise_to <clock|port|inst|hinst|pin|hpin|port_bus|hpin_bus>+:
+        endpoints with a rise transition at the pin itself 
+    -fall_to <clock|port|inst|hinst|pin|hpin|port_bus|hpin_bus>+:
+        endpoints with a fall transition at the pin itself 
+    -through <port|inst|hinst|pin|hpin|hnet|port_bus|hpin_bus>+:
+        through list 
+    -rise_through <port|inst|hinst|pin|hpin|hnet|port_bus|hpin_bus>+:
+        this option specifies paths that contain a rise transition in one of these objects and it can be repeated and can be combined with -through and/or -through_fall_pin 
+    -fall_through <port|inst|hinst|pin|hpin|hnet|port_bus|hpin_bus>+:
+        this option specifies paths that contain a fall transition in one of these objects and it can be repeated and can be combined with -through and/or -through_rise_pin 
+    [-comment <string>]:
+        comment to be tagged with this command 
+    [-exception_name <string>]:
+        name of the timing exception 
+    [-combinational_from_to]:
+        defines path defined by -from/to pins as combinational 
+    [-ignore_clock_latency]:
+        ignore clock latency 
+    [-reset_path]:
+        reset any other exceptions on this path spec and apply this exception 
+    <float>:
+        delay value 
+#@ End verbose source ../../constraints/ga_coprocessor.sdc
+#@ End verbose source ../scripts/genus.tcl
+1
+@genus:root: 3> clear
+@genus:root: 4> exit
+
+Lic Summary:
+[15:11:46.093560] Cdslmd servers: gashapon
+[15:11:46.617875] Feature usage summary:
+[15:11:46.617875] Genus_Synthesis
+
+Normal exit.

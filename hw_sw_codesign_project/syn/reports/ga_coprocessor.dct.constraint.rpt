@@ -1,0 +1,30 @@
+ 
+****************************************
+Report : constraint
+        -all_violators
+Design : ga_coprocessor
+Version: Q-2019.12-SP3
+Date   : Sat Jun 14 17:25:09 2025
+****************************************
+
+
+   max_capacitance
+
+                             Required        Actual
+   Net                      Capacitance    Capacitance       Slack
+   -----------------------------------------------------------------
+   n2872                       16.00          16.04          -0.04  (VIOLATED)
+
+   -----------------------------------------------------------------
+   Total                      1                  -0.04  
+
+   max_leakage_power
+
+                             Required        Actual
+   Design                   Leakage Power  Leakage Power     Slack
+   -----------------------------------------------------------------
+   ga_coprocessor               0.00       112211632.00   -112211632.00
+                                                                    (VIOLATED)
+
+
+1

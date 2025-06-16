@@ -1,0 +1,16 @@
+<Database>
+versionNumber:2
+Name/home/koushik/common/Downloads/hw/apr/work/check_design.ems
+Creation TimeSun Jun 15 13:49:17 2025
+Modified TimeSun Jun 15 13:49:18 2025
+Design Namega_coprocessor
+Library Namega_coprocessor_lib
+</Database>
+<RuleCount>
+DFT-0111
+</RuleCount>
+<UserDefinedRules>
+</UserDefinedRules>
+<Messages>
+DFT-011Informationreason10
+</Messages>

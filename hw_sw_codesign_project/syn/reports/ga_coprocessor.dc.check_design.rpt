@@ -1,0 +1,80 @@
+ 
+****************************************
+check_design summary:
+Version:     Q-2019.12-SP3
+Date:        Sat Jun 14 17:20:26 2025
+****************************************
+
+                   Name                                            Total
+--------------------------------------------------------------------------------
+Inputs/Outputs                                                     65
+    Unconnected ports (LINT-28)                                    64
+    Shorted outputs (LINT-31)                                       1
+--------------------------------------------------------------------------------
+
+Warning: In design 'ga_coprocessor', port 'crossover_seed[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'crossover_seed[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[31]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[30]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[29]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[28]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[27]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[26]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[25]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[24]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[23]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[22]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[21]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[20]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[19]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[18]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[17]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[16]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[15]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[14]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[13]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[12]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[11]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[10]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[9]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[8]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[7]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[6]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[5]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[4]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[3]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[2]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[1]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', port 'mutation_seed[0]' is not connected to any nets. (LINT-28)
+Warning: In design 'ga_coprocessor', output port 'result_valid' is connected directly to output port 'processing_done'. (LINT-31)
+1

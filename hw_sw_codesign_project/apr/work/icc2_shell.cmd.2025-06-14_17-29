@@ -1,0 +1,100 @@
+#@ # 
+#@ # Running icc2_shell Version V-2023.12 for linux64 -- Nov 23, 2023
+#@ # Date:   Sat Jun 14 17:28:56 2025
+#@ # Run by: koushik@auto.ece.pdx.edu
+#@ 
+
+source /home/koushik/common/Downloads/hw/apr/work/.synopsys_icc2.setup
+set top_design ga_coprocessor
+source ../scripts/icc2.tcl
+error_info
+place_opt
+error_info
+gui_start
+gui_set_pref_value -category {SelectByNamePalette} -key {ObjectType} -value {Logical Cells}
+win_set_filter -visible -class cell -filter {assembly_die_margin clock_margin hard_macro_margin hard_margin route_blockage_margin seal_ring_margin soft_margin} -layer {}
+win_set_filter -visible -class pseudo_bump -filter {deleted} -layer {}
+win_set_filter -visible -class pseudo_tsv -filter {deleted} -layer {}
+win_set_filter -visible -class placement_blockage -filter {wiring} -layer {0-82}
+win_set_filter -expand_cell_types {soft_macro  }
+win_set_select_class -visible {cell port bound routing_blockage shaping_blockage pg_region bump_region pseudo_bump pseudo_tsv pin_blockage block_shielding topology_node topology_edge topology_repeater annotation_shape core_area die_area edit_group shape via terminal fill_cell placement_blockage }
+win_set_filter -class cell -filter {array assembly_die_margin clock_margin hard_macro_margin hard_margin route_blockage_margin seal_ring_margin soft_margin} -layer {}
+win_set_filter -class pseudo_bump -filter {deleted} -layer {}
+win_set_filter -class pseudo_tsv -filter {deleted} -layer {}
+win_set_filter -class placement_blockage -filter {wiring} -layer {0-82}
+win_set_select_class {cell port bound routing_blockage shaping_blockage pg_region bump_region pseudo_bump pseudo_tsv pin_blockage topology_node topology_edge topology_repeater annotation_shape edit_group shape via placement_blockage }
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {291.044 522.320}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {290.641 521.998}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {290.641 521.998}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {290.641 521.998}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {290.640 521.999}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {290.638 522.000}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {290.639 521.999}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {290.641 521.998}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {290.641 521.998}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {290.641 521.998}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {878.007 11.637}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {837.866 7.541}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {853.431 -3.108}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.250 -1.470}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.250 -0.651}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.250 -0.446}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.250 -0.241}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.099 0.678}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.168 0.684}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.144 0.683}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.757 0.377}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.756 0.378}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.750 0.388}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.745 0.385}
+gui_scroll -window [gui_get_current_window -view] -vrel .2
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.557 0.133}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.558 0.133}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.557 0.133}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.557 0.133}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {854.556 0.132}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.523 0.144}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.522 0.145}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.522 0.144}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.523 0.144}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.400 0.626}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.402 0.623}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.400 0.622}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.403 0.621}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.399 0.598}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.353 0.578}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.455 0.578}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {854.660 0.578}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {855.069 0.987}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {855.069 0.168}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {796.087 77.173}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {797.725 77.173}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {800.183 76.354}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {802.231 68.162}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {802.231 68.162}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {802.231 68.162}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {802.234 68.160}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {802.243 68.153}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {802.237 68.151}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {802.241 68.161}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {802.263 68.138}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {817.591 70.926}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {817.594 70.925}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {817.629 70.917}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {817.649 70.865}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 2 -at_point {817.646 70.862}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {817.647 70.863}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {817.646 70.864}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {817.651 70.868}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {817.644 70.873}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {817.650 70.876}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {817.693 70.926}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {817.591 70.824}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {817.796 70.619}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {818.205 70.619}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {817.386 70.619}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {815.748 70.619}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {819.025 67.342}
+gui_zoom -window [gui_get_current_window -types Layout -mru] -factor 0.5 -at_point {819.025 67.342}
+gui_zoom -window [gui_get_current_window -view] -full
+exit

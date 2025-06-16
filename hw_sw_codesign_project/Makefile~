@@ -1,0 +1,6 @@
+TOPLEVEL_LANG = verilog
+TOPLEVEL = ga_coprocessor  
+MODULE = test
+SIM = questa
+VERILOG_SOURCES = dut.v
+include $(shell cocotb-config --makefiles)/Makefile.sim

@@ -1,0 +1,8 @@
+<testsuites name="results">
+  <testsuite name="all" package="all">
+    <property name="random_seed" value="1750041408" />
+    <testcase name="test_performance_comparison" classname="test_ga_enhanced" file="/home/koushik/common/Downloads/hw/test_ga_enhanced.py" lineno="264" time="0.13134360313415527" sim_time_ns="10030.001" ratio_time="76364.59454942231" />
+    <testcase name="test_enhanced_ga_hardware" classname="test_ga_enhanced" file="/home/koushik/common/Downloads/hw/test_ga_enhanced.py" lineno="483" time="1317.7810220718384" sim_time_ns="3252200.0009999997" ratio_time="2467.9365892573214" />
+    <testcase name="test_hardware_operations" classname="test_ga_enhanced" file="/home/koushik/common/Downloads/hw/test_ga_enhanced.py" lineno="602" time="1.3704407215118408" sim_time_ns="1160.001000000164" ratio_time="846.4437620625251" />
+  </testsuite>
+</testsuites>

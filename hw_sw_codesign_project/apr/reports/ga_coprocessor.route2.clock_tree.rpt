@@ -1,0 +1,21 @@
+****************************************
+Report : clock timing
+        -type skew
+        -nworst 1
+        -setup
+Design : ga_coprocessor
+Version: V-2023.12
+Date   : Sun Jun 15 13:49:35 2025
+****************************************
+Information: Timer using 'SI, Timing Window Analysis, CRPR'. (TIM-050)
+
+  Mode: func
+  Clock: clk
+
+  Clock Pin                                 Latency      CRP      Skew             Corner
+---------------------------------------------------------------------------------------------------
+  stored_chromosome_reg_71_/CLK                2.76                       rp-+       slow
+  mismatch_count_reg_15_/CLK                   1.46     0.01      1.29    rp-+       slow
+
+---------------------------------------------------------------------------------------------------
+1

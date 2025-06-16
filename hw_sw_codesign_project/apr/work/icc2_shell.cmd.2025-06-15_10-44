@@ -1,0 +1,80 @@
+#@ # 
+#@ # Running icc2_shell Version V-2023.12 for linux64 -- Nov 23, 2023
+#@ # Date:   Sun Jun 15 10:44:23 2025
+#@ # Run by: koushik@auto.ece.pdx.edu
+#@ 
+
+source /home/koushik/common/Downloads/hw/apr/work/.synopsys_icc2.setup
+set top_design ga_coprocessor
+set_flow f
+set flow "f"
+proc std_reporting { top_design stage } {
+	report_qor > ../reports/${top_design}.$stage.qor.rpt
+        report_clock_qor > ../reports/${top_design}.$stage.clock_qor.rpt
+        report_constraint -nosplit -all_viol > ../reports/${top_design}.$stage.constraint.rpt
+	report_timing -nosplit -delay max -input -tran -cross -sig 4 -derate -net -cap  -path full_clock_expanded -max_path 1000 -slack_less 0 > ../reports/${top_design}.$stage.timing.max.full_clock.rpt
+        exec gzip -f ../reports/${top_design}.$stage.timing.max.full_clock.rpt
+	report_timing -nosplit -delay max -input -tran -cross -sig 4 -derate -net -cap  -max_path 1000 -slack_less 0 > ../reports/${top_design}.$stage.timing.max.rpt
+        exec gzip -f ../reports/${top_design}.$stage.timing.max.rpt
+}
+#####################################################
+# Main Code
+#####################################################
+source -echo -verbose ../../$top_design.design_config.tcl
+set my_lib ${top_design}_lib
+if { ! [ info exists flow ] } { set flow "fpcor" }
+####### STARTING INITIALIZE and FLOORPLAN #################
+if { [regexp -nocase "f" $flow ] } {
+    puts "######## STARTING INITIALIZE and FLOORPLAN #################"
+
+    # Use the DCT netlist
+
+    set dc_floorplanning 1
+
+    source -echo -verbose ../scripts/setup2.tcl
+    source -echo -verbose ../scripts/read2.tcl
+
+    # Source before floorplan in case we want to use timing to place pins
+    # Our time to load constraints is relatively small so we can do it at this spot if we want
+    if { $split_constraints } {
+	load_upf ../../constraints/${top_design}/top.upf
+
+	#commit_upf
+	source -echo -verbose ../../constraints/${top_design}/top.tcl
+	} else {
+    source -echo -verbose ../../constraints/${top_design}.sdc
+
+
+	#commit_upf
+	}
+	
+	if { [info exists design_size]} {
+
+    initialize_floorplan -control_type core -shape R -side_length $design_size -core_offset $design_io_border
+} elseif { [info exists boundary_size]} {
+	initialize_floorplan -control_type core -shape L -boundary $boundary_size
+}
+    source -echo -verbose ../../$top_design.design_options.tcl
+
+    if { [file exists ../scripts/${top_design}.pre.floorplan.tcl ] } { source -echo -verbose ../scripts/${top_design}.pre.floorplan.tcl }
+
+    
+	source -echo -verbose ../scripts/floorplan2.tcl
+   
+
+    if { [file exists ../scripts/${top_design}.post.floorplan.tcl ] } { source -echo -verbose ../scripts/${top_design}.post.floorplan.tcl }
+
+    save_block -as floorplan
+    puts "######## FINISHED INTIIALIZE and FLOORPLAN #################"
+
+}
+######## PLACE #################
+if { [regexp -nocase "p" $flow ] } {
+    if { [regexp -nocase "^p" $flow ] } {
+       open_lib $my_lib
+       copy_block -from floorplan -to $top_design
+       open_block $top_design
+       source -echo -verbose ../../$top_design.design_options.tcl
+    }
+}
+exit

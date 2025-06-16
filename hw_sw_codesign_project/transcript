@@ -1,0 +1,254 @@
+# do sim_build/runsim.do
+# QuestaSim-64 vmap 2024.2 Lib Mapping Utility 2024.05 May 20 2024
+# vmap -c 
+# ** Warning: Local modelsim.ini already exists and will not be overwritten. -c will be ignored.
+# QuestaSim-64 vmap 2024.2 Lib Mapping Utility 2024.05 May 20 2024
+# vmap work sim_build/work 
+# Modifying modelsim.ini
+# QuestaSim-64 vlog 2024.2 Compiler 2024.05 May 20 2024
+# Start time: 19:36:46 on Jun 15,2025
+# vlog -work work "+define+COCOTB_SIM" -sv -timescale 1ns/1ps -mfcu "+acc" ga_coprocessor.v 
+# -- Compiling module ga_coprocessor
+# 
+# Top level modules:
+# 	ga_coprocessor
+# End time: 19:36:46 on Jun 15,2025, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vsim -onfinish exit -pli "/u/koushik/miniforge3/lib/python3.12/site-packages/cocotb/libs/libcocotbvpi_modelsim.so" work.ga_coprocessor 
+# Start time: 19:36:46 on Jun 15,2025
+# ** Note: (vsim-3812) Design is being optimized...
+# ** Warning: (vsim-3865) Due to PLI being present, global +acc is being enabled automatically. This will cause your simulation to run very slowly. Please use vsim -no_autoacc to disable this feature. This feature is now deprecated and will be removed from future releases.
+# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility. The +acc switch would be deprecated in a future release.
+# ** Note: (vopt-143) Recognized 1 FSM in module "ga_coprocessor(fast)".
+# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
+# //  Questa Sim-64
+# //  Version 2024.2 linux_x86_64 May 20 2024
+# //
+# // Unpublished work. Copyright 2024 Siemens
+# //
+# // This material contains trade secrets or otherwise confidential information
+# // owned by Siemens Industry Software Inc. or its affiliates (collectively,
+# // "SISW"), or its licensors. Access to and use of this information is strictly
+# // limited as set forth in the Customer's applicable agreements with SISW.
+# //
+# // This material may not be copied, distributed, or otherwise disclosed outside
+# // of the Customer's facilities without the express written permission of SISW,
+# // and may not be used in any way not expressly authorized by SISW.
+# //
+# Loading sv_std.std
+# Loading work.ga_coprocessor(fast)
+# Loading /u/koushik/miniforge3/lib/python3.12/site-packages/cocotb/libs/libcocotbvpi_modelsim.so
+#      -.--ns INFO     gpi                                ..mbed/gpi_embed.cpp:79   in set_program_name_in_venv        Did not detect Python virtual environment. Using system-wide Python interpreter
+#      -.--ns INFO     gpi                                ../gpi/GpiCommon.cpp:101  in gpi_print_registered_impl       VPI registered
+#      0.00ns INFO     cocotb                             Running on ModelSim for Questa-64 version 2024.1 2024.05
+#      0.00ns INFO     cocotb                             Running tests with cocotb v1.9.2 from /u/koushik/miniforge3/lib/python3.12/site-packages/cocotb
+#      0.00ns INFO     cocotb                             Seeding Python random module with 1750041408
+#      0.00ns INFO     cocotb.regression                  Found test test_ga_enhanced.test_performance_comparison
+#      0.00ns INFO     cocotb.regression                  Found test test_ga_enhanced.test_enhanced_ga_hardware
+#      0.00ns INFO     cocotb.regression                  Found test test_ga_enhanced.test_hardware_operations
+#      0.00ns INFO     cocotb.regression                  running test_performance_comparison (1/3)
+#                                                           Compare hardware vs software performance - MAIN BENCHMARKING TEST
+# 
+# ============================================================
+# HARDWARE vs SOFTWARE PERFORMANCE COMPARISON
+# ============================================================
+# Clock Frequency: 100 MHz (10 ns period)
+# Test Target: 'I love GeeksforGeeks'
+# 
+# 1. FITNESS CALCULATION PERFORMANCE
+# ----------------------------------------
+# Software (perfect): 0 mismatches in 10.526 ?s
+# Hardware (perfect): 0 mismatches in 21 cycles (0.210 ?s)
+# Fitness Speedup: 50.1x
+# Software (1 diff): 1 mismatches in 9.438 ?s
+# Hardware (1 diff): 1 mismatches in 21 cycles (0.210 ?s)
+# 
+# 2. CROSSOVER OPERATION PERFORMANCE
+# ----------------------------------------
+# Software crossover: 42.755 ?s
+# Software result: 'AABAAABAAABABAlBBBA'
+# Hardware crossover: 21 cycles (0.210 ?s)
+# Hardware result: 'AAAAAAAAAAAAAAAAAAB'
+# Crossover Speedup: 203.6x
+# SW A/B content: True/True, HW A/B content: True/True
+# 
+# 3. MUTATION OPERATION PERFORMANCE
+# ----------------------------------------
+# Software mutation: 35.599 ?s
+# Software result: 'IMlo3p @!lksfArRee.s'
+# Hardware mutation: 21 cycles (0.210 ?s)
+# Hardware result: '5uOp82oD nB]hp82oek'
+# Mutation Speedup: 169.5x
+# SW differences: 9, HW differences: 17
+# 
+# 4. COMPLETE GA GENERATION PERFORMANCE
+# ----------------------------------------
+# Running software generation...
+# Software generation: 0.373 ms
+# Running hardware generation...
+# Hardware generation: 95.933 ms (567 total cycles)
+# Generation Speedup: 0.0x
+# 
+# PERFORMANCE SUMMARY
+# ============================================================
+# Operation      | HW Cycles | HW Time (?s) | SW Time (?s) | Speedup
+# ----------------------------------------------------------
+# Fitness        |       21 |      0.210 |     22.518 |  107.2x
+# Crossover      |       21 |      0.210 |     35.599 |  169.5x
+# Mutation       |       21 |      0.210 |     35.599 |  169.5x
+# Full Gen       |      567 |  95933.257 |    372.918 |    0.0x
+# ============================================================
+#  10030.00ns INFO     cocotb.regression                  test_performance_comparison passed
+#  10030.00ns INFO     cocotb.regression                  running test_enhanced_ga_hardware (2/3)
+#                                                           GA with hardware acceleration for fitness, crossover, and mutation
+# Enhanced GA with Hardware Acceleration
+# Hardware Operations: Fitness + Crossover + Mutation
+# Population Size: 50
+# Target: 'I love GeeksforGeeks'
+# 
+# Hardware accelerating initial fitness calculations...
+# Generation: 1	String: oo@!NaDT2wodfMsRn1Cb	Fitness: 18
+# Generation: 2	String: I:vsLlqn-C-Lf4ItCeT	Fitness: 16
+# Generation: 3	String: I:vsLlqn-C-Lf4ItCeT	Fitness: 16
+# Generation: 4	String: IusELlqG9CJLVMIG e#	Fitness: 15
+# Generation: 5	String: IWskLl nE1c:fJsCCek	Fitness: 14
+# Generation: 6	String: I  R q%GQ!JLfSPGC k	Fitness: 13
+# Generation: 7	String: I  R q%GQ!JLfSPGC k	Fitness: 13
+# Generation: 8	String: IuskL  Gd1 LfXPGCek	Fitness: 12
+# Generation: 9	String: IuskL  Gd1 LfXPGCek	Fitness: 12
+# Generation: 10	String: IWs xe Gd!-:faiGCek	Fitness: 11
+# Generation: 11	String: IusFve Gg!-LfhsGCek	Fitness: 10
+# Generation: 12	String: IusFve Gg!-LfhsGCek	Fitness: 10
+# Generation: 13	String: I s De Gd1-LfoiGCek	Fitness: 9
+# Generation: 14	String: I s De Gd1-LfoiGCek	Fitness: 9
+# Generation: 15	String: I s De Gd1-LfoiGCek	Fitness: 9
+# Generation: 16	String: I s De Gd1-LfoiGCek	Fitness: 9
+# Generation: 17	String: I sjve GD?-FfosGCek	Fitness: 8
+# Generation: 18	String: I sjve GD?-FfosGCek	Fitness: 8
+# Generation: 19	String: I   ve Gg?9sfosGCek	Fitness: 7
+# Generation: 20	String: I   ve Gg?9sfosGCek	Fitness: 7
+# Generation: 21	String: I   ve Gg?9sfosGCek	Fitness: 7
+# Generation: 22	String: I   ve Gg?9sfosGCek	Fitness: 7
+# Generation: 23	String: I   ve Gg?9sfosGCek	Fitness: 7
+# Generation: 24	String: I   ve Gg?9sfosGCek	Fitness: 7
+# Generation: 25	String: I   ve Gg?9sfosGCek	Fitness: 7
+# Generation: 26	String: I sjve Ge?9sfoPG ek	Fitness: 6
+# Generation: 27	String: I  jve Ge?]sfosGeek	Fitness: 5
+# Generation: 28	String: I  jve Ge?]sfosGeek	Fitness: 5
+# Generation: 29	String: I  jve Ge?]sfosGeek	Fitness: 5
+# Generation: 30	String: I  jve Ge?]sfosGeek	Fitness: 5
+# Generation: 31	String: I  jve Ge?]sfosGeek	Fitness: 5
+# Generation: 32	String: I  jve Ge?]sfosGeek	Fitness: 5
+# Generation: 33	String: I  jve Ge?]sfosGeek	Fitness: 5
+# Generation: 34	String: I  jve Ge?]sfosGeek	Fitness: 5
+# Generation: 35	String: I  jve Ge?]sfosGeek	Fitness: 5
+# Generation: 36	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 37	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 38	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 39	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 40	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 41	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 42	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 43	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 44	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 45	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 46	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 47	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 48	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 49	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 50	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 51	String: I sove Ge?]sfoPGeek	Fitness: 4
+# Generation: 52	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 53	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 54	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 55	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 56	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 57	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 58	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 59	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 60	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 61	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 62	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 63	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 64	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 65	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 66	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 67	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 68	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 69	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 70	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 71	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 72	String: I sove Ge?]sforGeek	Fitness: 3
+# Generation: 73	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 74	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 75	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 76	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 77	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 78	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 79	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 80	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 81	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 82	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 83	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 84	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 85	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 86	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 87	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 88	String: I sove Gee]sforGeek	Fitness: 2
+# Generation: 89	String: I sove GeeksforGeek	Fitness: 1
+# Generation: 90	String: I sove GeeksforGeek	Fitness: 1
+# Generation: 91	String: I sove GeeksforGeek	Fitness: 1
+# Generation: 92	String: I sove GeeksforGeek	Fitness: 1
+# Generation: 93	String: I sove GeeksforGeek	Fitness: 1
+# Generation: 94	String: I sove GeeksforGeek	Fitness: 1
+# Generation: 95	String: I sove GeeksforGeek	Fitness: 1
+# Generation: 96	String: I sove GeeksforGeek	Fitness: 1
+# Generation: 97	String: I sove GeeksforGeek	Fitness: 1
+# Generation: 98	String: I sove GeeksforGeek	Fitness: 1
+# Generation: 99	String: I sove GeeksforGeek	Fitness: 1
+# Generation: 100	String: I sove GeeksforGeek	Fitness: 1
+# Generation: 101	String: I sove GeeksforGeek	Fitness: 1
+# 
+# COMPLETED: 100 generations
+# Target:  'I love GeeksforGeeks'
+# Result:  'I sove GeeksforGeek'
+# Final Fitness: 1
+# Total Hardware Operations: 13500
+# Total Hardware Cycles: 283500
+# Operations per Generation: 133.7
+# Average Cycles per Operation: 21.0
+# Hardware Accelerated: Fitness + Crossover + Mutation
+# 3262230.00ns INFO     cocotb.regression                  test_enhanced_ga_hardware passed
+# 3262230.00ns INFO     cocotb.regression                  running test_hardware_operations (3/3)
+#                                                            Test individual hardware operations
+# 
+# Testing Enhanced Hardware Operations
+# =====================================
+# Testing Hardware Fitness:
+#   Perfect match: 0 (expected: 0) in 21 cycles
+#   Single difference: 1 (expected: 1) in 21 cycles
+# Testing Hardware Crossover:
+#   Parent1: 'AAAAAAAAAAAAAAAAAAA'
+#   Parent2: 'BBBBBBBBBBBBBBBBBBB'
+#   Offspring: '--MBBABBABByBBBAABB' in 21 cycles
+#   Contains A: True, Contains B: True (Should be True, True)
+# Testing Hardware Mutation:
+#   Original: 'I love GeeksforGeeks'
+#   Mutated:  'Iolove GezksjoE8eZk' in 21 cycles
+#   Differences: 6 (Should be > 0 with 50% mutation rate)
+# Enhanced hardware operations test complete!
+# 3263390.00ns INFO     cocotb.regression                  test_hardware_operations passed
+# 3263390.00ns INFO     cocotb.regression                  ******************************************************************************************************
+#                                                          ** TEST                                          STATUS  SIM TIME (ns)  REAL TIME (s)  RATIO (ns/s) **
+#                                                          ******************************************************************************************************
+#                                                          ** test_ga_enhanced.test_performance_comparison   PASS       10030.00           0.13      76364.59  **
+#                                                          ** test_ga_enhanced.test_enhanced_ga_hardware     PASS     3252200.00        1317.78       2467.94  **
+#                                                          ** test_ga_enhanced.test_hardware_operations      PASS        1160.00           1.37        846.44  **
+#                                                          ******************************************************************************************************
+#                                                          ** TESTS=3 PASS=3 FAIL=0 SKIP=0                            3263390.00        1319.73       2472.77  **
+#                                                          ******************************************************************************************************
+#                                                          
+# ** Note: $finish
+#    Time: 3263390003 ps  Iteration: 0  Instance: /ga_coprocessor
+# End time: 19:58:48 on Jun 15,2025, Elapsed time: 0:22:02
+# Errors: 0, Warnings: 2

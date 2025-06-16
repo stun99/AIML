@@ -1,0 +1,604 @@
+setting auto_restore_mw_cel_lib_setup true
+Initializing gui preferences from file  /u/koushik/.synopsys_dv_prefs.tcl
+dc_shell> set top_design ga_processor
+ga_processor
+dc_shell> set top_design ga_coprocessor
+ga_coprocessor
+dc_shell> source ../scripts/dc.tcl
+set lib_dir /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib
+# Decoder ring for the libraries
+# You will need to follow another example or look in the library directories to understand.
+# lib_types is used for the dc/dct linking variables and ICC2 NDM lcoations.
+# /pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm
+# /          $lib_dir                   /lib/ $lib_type /db_nldm
+# link_library, Target_library use the sub_lib_types and corner variables. 
+# For sub_lib_types and corner:
+# Example:
+#     saed32hvt_ss0p75v125c.db
+#     |sub_lib  corner    .db
+# The current flow tries to find all sub_lib and all corners in all the search paths.  Any match will be put in the library list.
+# Wild cards can be used, but be careful.  Multiple matches can occur in ways you don't want.
+# For the target library, the same method is used as the link library except only HVT and RVT lib_types are used.
+# ICC2 NDM choosing also uses the sub_lib_types so that only the required libraries and extras are not loaded.
+# ORCA
+# The RTL version does not currently have macros
+# The one pulled from a lab does have macros, but no RTL.  Similar to the version with RTL.
+# Below is an effort to get the design pulled from a lap working for ICC2
+# Original lab had sram_lp memories, but the NDMs don't seem to be build correctly for the current libraries.  Converted code to regular SRAMs.
+set top_design ga_coprocessor
+ga_coprocessor
+set FCL 1
+1
+set add_ios 0
+0
+set pad_design 0
+0
+set design_size {1000 644 }
+1000 644 
+set design_io_border 10
+10
+set dc_floorplanning 1
+1
+set enable_dft  0
+0
+set innovus_enable_manual_macro_placement 1
+1
+set split_constraints 0
+0
+# This is the raw RTL without SRAMS
+#set rtl_list [list [glob /pkgs/synopsys/32_28nm/SAED_EDK32.28nm_REF_v_15032018/SAED32_EDK/references/orca/dc/rtl/*.vhd ] ../rtl/MUX21X2.sv ]
+# This is hacked P&R netlist with SRAMs and test and level shifters removed.
+set rtl_list [list ../rtl/$top_design.sv ]
+../rtl/ga_coprocessor.sv
+set slow_corner "ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v"
+ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v
+set fast_corner "ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v"
+ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v
+#set slow_metal 1p9m_Cmax_-40
+#set fast_metal 1p9m_Cmax_-40
+set slow_metal Cmax.tlup_-40
+Cmax.tlup_-40
+set fast_metal Cmin.tlup_40
+Cmin.tlup_40
+set synth_corners $slow_corner
+ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v
+set synth_corners_slow $slow_corner
+ss0p75vn40c ss0p75vn40c_i0p95v ss0p75vn40c_i0p75v ss0p95vn40c ss0p95vn40c_i0p75v
+set synth_corners_fast $fast_corner
+ff0p95vn40c ff0p95vn40c_i1p16v ff0p95vn40c_i0p95v ff1p16vn40c ff1p16vn40c_i1p16v ff1p16vn40c_i0p95v
+set lib_types "stdcell_hvt"
+stdcell_hvt
+# Get just the main standard cells, srams
+set sub_lib_type "saed32hvt_  "
+saed32hvt_  
+set ndm_types "$lib_dir/stdcell_hvt/ndm"
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/ndm
+#set lib_types "$lib_dir/stdcell_hvt/db_nldm $lib_dir/stdcell_lvt/db_nldm $lib_dir/io_std/db_nldm $lib_dir/sram/db_nldm $lib_dir/pll/db_nldm"
+#set ndm_types "$lib_dir/stdcell_lvt/ndm $lib_dir/stdcell_rvt/ndm $lib_dir/stdcell_hvt/ndm $lib_dir/sram/ndm $lib_dir/io_std/ndm  $lib_dir/pll/ndm"
+set lib_types_target "$lib_dir/stdcell_hvt/db_nldm"
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm
+set sub_lib_type "saed32hvt_"
+saed32hvt_
+set sub_lib_type_target "saed32hvt_"
+saed32hvt_
+set synth_corners_target "ss0p95vn40c ss0p75vn40c" 
+ss0p95vn40c ss0p75vn40c
+#set synth_corners_target "ss0p95v125c" 
+set lef_types [list $lib_dir/stdcell_hvt/lef  ]
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/lef
+set sub_lef_type "saed32nm_hvt_.lef "
+saed32nm_hvt_.lef 
+set mwlib_types [list $lib_dir/stdcell_hvt/milkyway  ]
+/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/milkyway
+set sub_mwlib_type "saed32nm_hvt_*"
+saed32nm_hvt_*
+#set lib_types "stdcell_hvt stdcell_rvt stdcell_lvt sram"
+# Get just the main standard cells, srams
+#set sub_lib_type "saed32?vt_ saed32sram_ saed32?vt_ulvl_ saed32?vt_dlvl_ "
+#set topdir /u/$env(USER)/PSU_RTL2GDS
+set topdir [ lindex [ regexp -inline "(.*)\(syn\|pt\|apr\)" [pwd] ] 1 ]
+/home/koushik/common/Downloads/hw/
+Warning: No designs to list. (UID-275)
+== ANALYZE autoread all files ==
+
+Starting ANALYZE autoread mode...
+Warning: Defining design library 'WORK' at directory '/home/koushik/common/Downloads/hw/syn/work/WORK_autoread'. (AUTOREAD-107)
+Information: Adding '/home/koushik/common/Downloads/hw/syn/rtl/ga_coprocessor.sv'.  (AUTOREAD-100)
+Information: Scanning file { ga_coprocessor.sv }. (AUTOREAD-303)
+Compiling source file /home/koushik/common/Downloads/hw/syn/rtl/ga_coprocessor.sv
+Presto compilation completed successfully.
+Autoread command completed successfully.
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/dw_foundation.sldb'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.db'
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/gtech.db'
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/standard.sldb'
+  Loading link library 'saed32hvt_ss0p95vn40c'
+  Loading link library 'saed32hvt_ss0p75vn40c'
+  Loading link library 'gtech'
+Running PRESTO HDLC
+
+Statistics for case statements in always block at line 102 in file
+        '/home/koushik/common/Downloads/hw/syn/rtl/ga_coprocessor.sv'
+===============================================
+|           Line           |  full/ parallel  |
+===============================================
+|           127            |    auto/auto     |
+|           136            |    auto/auto     |
+|            90            |    auto/auto     |
+===============================================
+
+Inferred memory devices in process
+        in routine ga_coprocessor line 76 in file
+                '/home/koushik/common/Downloads/hw/syn/rtl/ga_coprocessor.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|    lfsr_reg_reg     | Flip-flop |  23   |  Y  | N  | N  | Y  | N  | N  | N  |
+|    lfsr_reg_reg     | Flip-flop |   9   |  Y  | N  | Y  | N  | N  | N  | N  |
+===============================================================================
+
+Inferred memory devices in process
+        in routine ga_coprocessor line 102 in file
+                '/home/koushik/common/Downloads/hw/syn/rtl/ga_coprocessor.sv'.
+====================================================================================
+|      Register Name       |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+====================================================================================
+|        state_reg         | Flip-flop |   3   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     fitness_out_reg      | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    offspring_out_reg     | Flip-flop |  152  |  Y  | N  | Y  | N  | N  | N  | N  |
+|     mutated_out_reg      | Flip-flop |  152  |  Y  | N  | Y  | N  | N  | N  | N  |
+|     result_valid_reg     | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   processing_done_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|   processing_busy_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
+|     char_counter_reg     | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    cross_counter_reg     | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|     mut_counter_reg      | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    mismatch_count_reg    | Flip-flop |  16   |  Y  | N  | Y  | N  | N  | N  | N  |
+|    offspring_temp_reg    | Flip-flop |  152  |  Y  | N  | Y  | N  | N  | N  | N  |
+|     mutated_temp_reg     | Flip-flop |  152  |  Y  | N  | Y  | N  | N  | N  | N  |
+|  stored_chromosome_reg   | Flip-flop |  152  |  Y  | N  | Y  | N  | N  | N  | N  |
+|    stored_target_reg     | Flip-flop |  152  |  Y  | N  | Y  | N  | N  | N  | N  |
+|    stored_parent1_reg    | Flip-flop |  152  |  Y  | N  | Y  | N  | N  | N  | N  |
+|    stored_parent2_reg    | Flip-flop |  152  |  Y  | N  | Y  | N  | N  | N  | N  |
+| stored_mutation_rate_reg | Flip-flop |   8   |  Y  | N  | Y  | N  | N  | N  | N  |
+====================================================================================
+Statistics for MUX_OPs
+========================================================
+|  block name/line   | Inputs | Outputs | # sel inputs |
+========================================================
+| ga_coprocessor/190 |   32   |    1    |      5       |
+========================================================
+Presto compilation completed successfully. (ga_coprocessor)
+Elaborated 1 design.
+Current design is now 'ga_coprocessor'.
+Warning: The specified replacement character (_) is conflicting with the specified allowed or restricted character.   (UCN-4)
+create_clock -name sys_clk -period 2 [get_ports clk]
+1
+set_clock_uncertainty 0.2 [get_clocks sys_clk]
+1
+set_clock_transition 0.1 [get_clocks sys_clk]
+1
+set_clock_latency -source 0.2 [get_clocks sys_clk]
+1
+set_input_delay -clock sys_clk 0.2 [get_ports rst_n]
+1
+set_input_delay -clock sys_clk 0.2 [get_ports start]
+1
+set_input_delay -clock sys_clk 0.2 [get_ports operation_valid]
+1
+set_input_delay -clock sys_clk 0.2 [get_ports operation]
+1
+set_input_delay -clock sys_clk 0.3 [get_ports chromosome_in]
+1
+set_input_delay -clock sys_clk 0.3 [get_ports target_string]
+1
+set_input_delay -clock sys_clk 0.3 [get_ports parent1]
+1
+set_input_delay -clock sys_clk 0.3 [get_ports parent2]
+1
+set_input_delay -clock sys_clk 0.25 [get_ports crossover_seed]
+1
+set_input_delay -clock sys_clk 0.3 [get_ports chromosome_to_mutate]
+1
+set_input_delay -clock sys_clk 0.25 [get_ports mutation_seed]
+1
+set_input_delay -clock sys_clk 0.2 [get_ports mutation_rate]
+1
+set_output_delay -clock sys_clk 0.2 [get_ports fitness_out]
+1
+set_output_delay -clock sys_clk 0.35 [get_ports offspring_out]
+1
+set_output_delay -clock sys_clk 0.35 [get_ports mutated_out]
+1
+set_output_delay -clock sys_clk 0.15 [get_ports result_valid]
+1
+set_output_delay -clock sys_clk 0.15 [get_ports processing_done]
+1
+set_output_delay -clock sys_clk 0.15 [get_ports processing_busy]
+1
+set_load 0.05 [get_ports fitness_out]
+1
+set_load 0.1 [get_ports {offspring_out mutated_out}]
+1
+set_load 0.02 [get_ports {result_valid processing_done processing_busy}]
+1
+set_max_delay 0.8 -from [get_ports chromosome_in] -to [get_ports fitness_out]
+1
+set_max_delay 0.8 -from [get_ports target_string] -to [get_ports fitness_out]
+1
+set_max_delay 0.85 -from [get_ports {parent1 parent2}] -to [get_ports offspring_out]
+1
+set_max_delay 0.85 -from [get_ports chromosome_to_mutate] -to [get_ports mutated_out]
+1
+set_max_delay 0.5 -from [get_ports start] -to [get_ports processing_busy]
+1
+set_max_delay 0.5 -from [get_ports start] -to [get_ports processing_done]
+1
+Current design is 'ga_coprocessor'.
+Information: Performing power optimization. (PWR-850)
+Analyzing: "/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.db"
+Analyzing: "/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.db"
+Library analysis succeeded.
+Information: Choosing a test methodology will restrict the optimization of sequential cells. (UIO-12)
+Information: Evaluating DesignWare library utilization. (UISN-27)
+
+============================================================================
+| DesignWare Building Block Library  |         Version         | Available |
+============================================================================
+| Basic DW Building Blocks           | Q-2019.12-DWBB_201912.3 |     *     |
+| Licensed DW Building Blocks        | Q-2019.12-DWBB_201912.3 |     *     |
+============================================================================
+
+Information: Sequential output inversion is enabled.  SVF file must be used for formal verification. (OPT-1208)
+
+Information: There are 69 potential problems in your design. Please run 'check_design' for more information. (LINT-99)
+
+  Simplifying Design 'ga_coprocessor'
+
+  Loading target library 'saed32hvt_ss0p75vn40c'
+Loaded alib file './alib-52/saed32hvt_ss0p95vn40c.db.alib'
+Loaded alib file './alib-52/saed32hvt_ss0p75vn40c.db.alib'
+Warning: Operating condition ss0p95vn40c set on design ga_coprocessor has different process,
+voltage and temperatures parameters than the parameters at which target library 
+saed32hvt_ss0p75vn40c is characterized. Delays may be inaccurate as a result. (OPT-998)
+Information: State dependent leakage is now switched from on to off.
+
+  Beginning Pass 1 Mapping
+  ------------------------
+  Processing 'ga_coprocessor'
+Information: Added key list 'DesignWare' to design 'ga_coprocessor'. (DDB-72)
+Information: In design 'ga_coprocessor', the register 'processing_done_reg' is removed because it is merged to 'result_valid_reg'. (OPT-1215)
+ Implement Synthetic for 'ga_coprocessor'.
+  Processing 'ga_coprocessor_DW_div_uns_J1_0'
+  Processing 'ga_coprocessor_DW_div_uns_J1_1'
+  Processing 'ga_coprocessor_DW_div_uns_J1_2'
+
+  Updating timing information
+Information: Updating design information... (UID-85)
+Information: The library cell 'PMT3_HVT' in the library 'saed32hvt_ss0p95vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT2_HVT' in the library 'saed32hvt_ss0p95vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'PMT1_HVT' in the library 'saed32hvt_ss0p95vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT3_HVT' in the library 'saed32hvt_ss0p95vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT2_HVT' in the library 'saed32hvt_ss0p95vn40c' is not characterized for internal power. (PWR-536)
+Information: The library cell 'NMT1_HVT' in the library 'saed32hvt_ss0p95vn40c' is not characterized for internal power. (PWR-536)
+Information: The target library(s) contains cell(s), other than black boxes, that are not characterized for internal power. (PWR-24)
+Information: Automatic shift-register identification is enabled for scan. Not all registers will be scan-replaced. (OPT-467)
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+  Beginning Mapping Optimizations  (Ultra High effort)
+  -------------------------------
+Information: Added key list 'DesignWare' to design 'ga_coprocessor_RSOP_141'. (DDB-72)
+  Structuring 'ga_coprocessor_DW_div_uns_0'
+  Mapping 'ga_coprocessor_DW_div_uns_0'
+  Structuring 'ga_coprocessor_DW_div_uns_1'
+  Mapping 'ga_coprocessor_DW_div_uns_1'
+  Structuring 'ga_coprocessor_DW_div_uns_2'
+  Mapping 'ga_coprocessor_DW_div_uns_2'
+  Structuring 'ga_coprocessor_DW_div_uns_3'
+  Mapping 'ga_coprocessor_DW_div_uns_3'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'DW01_add'
+  Mapping 'ga_coprocessor_DW01_add_1'
+  Mapping 'ga_coprocessor_DW01_add_2'
+  Mapping 'ga_coprocessor_DW01_add_3'
+  Mapping 'ga_coprocessor_DW_div_uns_3'
+  Structuring 'ga_coprocessor_DW_div_uns_4'
+  Mapping 'ga_coprocessor_DW_div_uns_4'
+  Structuring 'ga_coprocessor_DW_div_uns_5'
+  Mapping 'ga_coprocessor_DW_div_uns_5'
+  Structuring 'ga_coprocessor_DW_div_uns_6'
+  Mapping 'ga_coprocessor_DW_div_uns_6'
+  Structuring 'ga_coprocessor_DW_div_uns_7'
+  Mapping 'ga_coprocessor_DW_div_uns_7'
+  Structuring 'ga_coprocessor_DW_div_uns_8'
+  Mapping 'ga_coprocessor_DW_div_uns_8'
+  Mapping 'ga_coprocessor_DW01_add_5'
+  Mapping 'ga_coprocessor_DW01_sub_0'
+  Mapping 'ga_coprocessor_DW01_add_7'
+  Mapping 'ga_coprocessor_DW01_add_8'
+  Mapping 'ga_coprocessor_DW01_add_9'
+  Mapping 'ga_coprocessor_DW01_add_14'
+  Mapping 'ga_coprocessor_DW01_add_15'
+  Mapping 'ga_coprocessor_DW01_add_16'
+  Mapping 'ga_coprocessor_DW01_add_17'
+  Mapping 'ga_coprocessor_DW01_add_18'
+  Mapping 'ga_coprocessor_DW01_add_19'
+  Mapping 'ga_coprocessor_DW01_add_20'
+  Mapping 'ga_coprocessor_DW01_add_21'
+  Mapping 'ga_coprocessor_DW01_add_22'
+  Mapping 'ga_coprocessor_DW01_add_23'
+  Mapping 'ga_coprocessor_DW01_add_24'
+  Mapping 'ga_coprocessor_DW01_add_25'
+  Mapping 'ga_coprocessor_DW01_add_26'
+  Mapping 'ga_coprocessor_DW01_add_27'
+  Mapping 'ga_coprocessor_DW_div_uns_8'
+  Structuring 'ga_coprocessor_DW_div_uns_9'
+  Mapping 'ga_coprocessor_DW_div_uns_9'
+  Structuring 'ga_coprocessor_DW_div_uns_10'
+  Mapping 'ga_coprocessor_DW_div_uns_10'
+  Structuring 'ga_coprocessor_DW_div_uns_11'
+  Mapping 'ga_coprocessor_DW_div_uns_11'
+  Structuring 'ga_coprocessor_DW_div_uns_12'
+  Mapping 'ga_coprocessor_DW_div_uns_12'
+  Mapping 'ga_coprocessor_DW01_sub_1'
+  Mapping 'ga_coprocessor_DW01_add_31'
+  Mapping 'ga_coprocessor_DW01_add_32'
+  Mapping 'ga_coprocessor_DW01_add_33'
+  Mapping 'ga_coprocessor_DW01_add_38'
+  Mapping 'ga_coprocessor_DW01_add_39'
+  Mapping 'ga_coprocessor_DW01_add_40'
+  Mapping 'ga_coprocessor_DW01_add_41'
+  Mapping 'ga_coprocessor_DW01_add_42'
+  Mapping 'ga_coprocessor_DW01_add_43'
+  Mapping 'ga_coprocessor_DW01_add_44'
+  Mapping 'ga_coprocessor_DW01_add_45'
+  Mapping 'ga_coprocessor_DW01_add_46'
+  Mapping 'ga_coprocessor_DW01_add_47'
+  Mapping 'ga_coprocessor_DW01_add_48'
+  Mapping 'ga_coprocessor_DW01_add_49'
+  Mapping 'ga_coprocessor_DW01_add_50'
+  Mapping 'ga_coprocessor_DW01_add_51'
+  Mapping 'ga_coprocessor_DW_div_uns_12'
+  Mapping Optimization (Phase 1)
+  Mapping Optimization (Phase 2)
+  Mapping Optimization (Phase 3)
+  Mapping Optimization (Phase 4)
+  Mapping Optimization (Phase 5)
+  Mapping Optimization (Phase 6)
+  Mapping Optimization (Phase 7)
+  Mapping Optimization (Phase 8)
+  Mapping Optimization (Phase 9)
+  Mapping Optimization (Phase 10)
+  Mapping Optimization (Phase 11)
+Information: The register 'cross_counter_reg_6_' is a constant and will be removed. (OPT-1206)
+Information: The register 'cross_counter_reg_7_' is a constant and will be removed. (OPT-1206)
+Information: The register 'cross_counter_reg_5_' is a constant and will be removed. (OPT-1206)
+Information: The register 'mut_counter_reg_6_' is a constant and will be removed. (OPT-1206)
+Information: The register 'mut_counter_reg_7_' is a constant and will be removed. (OPT-1206)
+Information: The register 'mut_counter_reg_5_' is a constant and will be removed. (OPT-1206)
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:03:07   21816.2      1.60     308.4      18.9                           1119491.0000
+    0:03:07   21793.1      1.69     317.2      18.9                           1118817.2500
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 0.00%
+
+  Beginning Constant Register Removal
+  -----------------------------------
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 0.00%
+
+  Beginning Global Optimizations
+  ------------------------------
+  Numerical Synthesis (Phase 1)
+  Numerical Synthesis (Phase 2)
+  Global Optimization (Phase 1)
+  Global Optimization (Phase 2)
+  Global Optimization (Phase 3)
+  Global Optimization (Phase 4)
+  Global Optimization (Phase 5)
+  Global Optimization (Phase 6)
+  Global Optimization (Phase 7)
+  Global Optimization (Phase 8)
+  Global Optimization (Phase 9)
+  Global Optimization (Phase 10)
+  Global Optimization (Phase 11)
+  Global Optimization (Phase 12)
+  Global Optimization (Phase 13)
+  Global Optimization (Phase 14)
+  Global Optimization (Phase 15)
+  Global Optimization (Phase 16)
+  Global Optimization (Phase 17)
+  Global Optimization (Phase 18)
+  Global Optimization (Phase 19)
+  Global Optimization (Phase 20)
+  Global Optimization (Phase 21)
+  Global Optimization (Phase 22)
+  Global Optimization (Phase 23)
+  Global Optimization (Phase 24)
+  Global Optimization (Phase 25)
+  Global Optimization (Phase 26)
+  Global Optimization (Phase 27)
+  Global Optimization (Phase 28)
+  Global Optimization (Phase 29)
+  Global Optimization (Phase 30)
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 0.00%
+
+  Beginning Isolate Ports
+  -----------------------
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 0.00%
+
+  Beginning Delay Optimization
+  ----------------------------
+    0:03:09   20843.6      1.88     302.2       0.3                           871040.5625
+    0:03:11   20863.7      1.44     247.8       0.3                           868289.7500
+    0:03:11   20863.7      1.44     247.8       0.3                           868289.7500
+    0:03:11   20871.3      1.43     246.9       0.3                           868835.8125
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 0.00%
+Information: The register 'char_counter_reg_7_' is a constant and will be removed. (OPT-1206)
+Information: The register 'char_counter_reg_6_' is a constant and will be removed. (OPT-1206)
+Information: The register 'char_counter_reg_5_' is a constant and will be removed. (OPT-1206)
+    0:03:12   20794.6      1.43     246.8       0.3                           865969.4375
+    0:03:12   20783.1      1.44     247.7       0.3                           865526.5625
+
+  Beginning WLM Backend Optimization
+  --------------------------------------
+    0:03:13   19834.7      1.44     253.9       0.2                           776390.8125
+    0:03:13   19812.1      1.44     251.4       0.2                           774416.0000
+    0:03:13   19812.1      1.44     251.4       0.2                           774416.0000
+    0:03:13   19797.6      1.44     245.4       0.1                           770931.8125
+    0:03:13   19797.6      1.44     245.4       0.1                           770931.8125
+    0:03:39   19881.9      1.34     236.2       0.1                           776236.6250
+    0:03:39   19881.9      1.34     236.2       0.1                           776236.6250
+    0:03:39   19882.7      1.34     235.9       0.1                           776345.0625
+    0:03:39   19882.7      1.34     235.9       0.1                           776345.0625
+    0:03:43   19949.8      1.30     228.9       0.1                           780671.2500
+    0:03:43   19949.8      1.30     228.9       0.1                           780671.2500
+    0:03:43   19952.3      1.29     228.3       0.1                           780507.7500
+    0:03:43   19952.3      1.29     228.3       0.1                           780507.7500
+    0:03:44   19954.9      1.29     228.2       0.1                           780652.8125
+    0:03:44   19954.9      1.29     228.2       0.1                           780652.8125
+    0:03:45   19954.9      1.29     228.2       0.1                           780652.8125
+    0:03:45   19954.9      1.29     228.2       0.1                           780652.8125
+    0:03:46   19954.9      1.29     228.2       0.1                           780652.8125
+    0:03:46   19954.9      1.29     228.2       0.1                           780652.8125
+    0:03:46   19954.9      1.29     228.2       0.1                           780652.8125
+    0:03:46   19954.9      1.29     228.2       0.1                           780652.8125
+    0:03:47   19954.9      1.29     228.2       0.1                           780652.8125
+
+
+  Beginning Design Rule Fixing  (max_transition)
+  ----------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:03:47   19954.9      1.29     228.2       0.1                           780652.8125
+  Global Optimization (Phase 31)
+  Global Optimization (Phase 32)
+  Global Optimization (Phase 33)
+    0:03:47   19969.1      1.25     221.9       0.0                           781479.1875
+    0:03:49   19966.8      1.24     221.6       0.0                           781389.3125
+
+Threshold voltage group cell usage:
+>> saed32cell_hvt 100.00%
+
+
+  Beginning Leakage Power Optimization  (max_leakage_power 0)
+  ------------------------------------
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:03:49   19966.8      1.24     221.6       0.0                           781389.3125
+  Global Optimization (Phase 34)
+  Global Optimization (Phase 35)
+  Global Optimization (Phase 36)
+  Global Optimization (Phase 37)
+  Global Optimization (Phase 38)
+  Global Optimization (Phase 39)
+  Global Optimization (Phase 40)
+  Global Optimization (Phase 41)
+  Global Optimization (Phase 42)
+  Global Optimization (Phase 43)
+  Global Optimization (Phase 44)
+  Global Optimization (Phase 45)
+  Global Optimization (Phase 46)
+  Global Optimization (Phase 47)
+  Global Optimization (Phase 48)
+  Global Optimization (Phase 49)
+    0:03:50   20652.0      1.25     226.6       0.0                           844667.6250
+    0:03:53   20664.2      1.25     224.1       0.0                           845215.7500
+    0:03:53   20664.2      1.25     224.1       0.0                           845215.7500
+    0:03:53   20050.2      1.25     222.4       0.0                           772630.3750
+    0:03:53   20050.2      1.25     222.4       0.0                           772630.3750
+    0:03:54   20050.2      1.25     222.4       0.0                           772630.3750
+    0:03:54   20050.2      1.25     222.4       0.0                           772630.3750
+    0:03:54   20050.7      1.25     222.3       0.0                           772756.6250
+    0:03:54   20050.7      1.25     222.3       0.0                           772756.6250
+    0:03:56   20052.7      1.25     222.2       0.0                           772820.8750
+    0:03:56   20052.7      1.25     222.2       0.0                           772820.8750
+    0:03:57   20073.3      1.23     220.2       0.0                           773911.4375
+    0:03:57   20073.3      1.23     220.2       0.0                           773911.4375
+    0:03:58   20073.3      1.23     220.2       0.0                           773911.4375
+    0:03:58   20073.3      1.23     220.2       0.0                           773911.4375
+    0:03:58   20073.3      1.23     220.2       0.0                           773911.4375
+    0:03:58   20073.3      1.23     220.2       0.0                           773911.4375
+    0:03:59   20073.3      1.23     220.2       0.0                           773911.4375
+    0:03:59   20073.3      1.23     220.2       0.0                           773911.4375
+    0:04:00   20073.3      1.23     220.2       0.0                           773911.4375
+    0:04:00   20073.3      1.23     220.2       0.0                           773911.4375
+    0:04:00   20073.3      1.23     220.2       0.0                           773911.4375
+
+                                  TOTAL                                                
+   ELAPSED            WORST NEG   SETUP    DESIGN                              LEAKAGE 
+    TIME      AREA      SLACK     COST    RULE COST         ENDPOINT            POWER  
+  --------- --------- --------- --------- --------- ------------------------- ---------
+    0:04:01   20073.3      1.23     220.2       0.0                           773911.4375
+    0:04:01   19812.1      1.25     231.7       0.1                           763827.8750
+    0:04:01   19806.5      1.25     230.8       0.1                           763632.2500
+    0:04:01   19806.5      1.25     230.8       0.1                           763632.2500
+    0:04:01   19814.8      1.25     220.9       0.0                           765486.0625
+    0:04:02   19804.4      1.25     220.8       0.0                           764680.6875
+    0:04:03   19811.3      1.22     217.6       0.0                           765149.0625
+    0:04:03   19811.3      1.22     217.6       0.0                           765149.0625
+    0:04:03   19812.3      1.22     216.1       0.0                           765534.0625
+    0:04:03   19812.3      1.22     216.1       0.0                           765534.0625
+    0:04:03   19812.3      1.22     216.1       0.0                           765534.0625
+    0:04:04   19802.6      1.22     216.1       0.0                           764992.2500
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p95vn40c.db'
+Loading db file '/pkgs/synopsys/2020/32_28nm/SAED32_EDK/lib/stdcell_hvt/db_nldm/saed32hvt_ss0p75vn40c.db'
+
+
+Note: Symbol # after min delay cost means estimated hold TNS across all active scenarios 
+
+
+  Optimization Complete
+  ---------------------
+Warning: Design 'ga_coprocessor' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+     Net 'clk': 1308 load(s), 1 driver(s)
+     Net 'n905': 2470 load(s), 1 driver(s)
+  Loading target library 'saed32hvt_ss0p75vn40c'
+Information: State dependent leakage is now switched from off to on.
+Information: Propagating switching activity (low effort zero delay simulation). (PWR-6)
+Warning: In the design ga_coprocessor, net 'result_valid' is connecting multiple ports. (UCN-1)
+Writing verilog file '/home/koushik/common/Downloads/hw/syn/outputs/ga_coprocessor.dc.vg'.
+Warning: Verilog 'assign' or 'tran' statements are written out. (VO-4)
+Writing ddc file '../outputs/ga_coprocessor.dc.ddc'.
+1
+dc_shell> gui_start
+Current design is 'ga_coprocessor'.
+4.1
+Current design is 'ga_coprocessor'.
+dc_shell> 
+Loading db file '/pkgs/synopsys/2020/design_compiler/syn/Q-2019.12-SP3/libraries/syn/generic.sdb'
+dc_shell> exit
+
+Memory usage for this session 458 Mbytes.
+Memory usage for this session including child processes 458 Mbytes.
+CPU usage for this session 203 seconds ( 0.06 hours ).
+Elapsed time for this session 534 seconds ( 0.15 hours ).
+
+Thank you...
+

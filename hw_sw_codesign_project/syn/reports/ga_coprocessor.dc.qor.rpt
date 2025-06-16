@@ -1,0 +1,85 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'ga_coprocessor' contains 3 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : qor
+Design : ga_coprocessor
+Version: Q-2019.12-SP3
+Date   : Sat Jun 14 17:20:26 2025
+****************************************
+
+
+  Timing Path Group 'sys_clk'
+  -----------------------------------
+  Levels of Logic:              33.00
+  Critical Path Length:          1.69
+  Critical Path Slack:           0.01
+  Critical Path Clk Period:      2.00
+  Total Negative Slack:          0.00
+  No. of Violating Paths:        0.00
+  Worst Hold Violation:          0.00
+  Total Hold Violation:          0.00
+  No. of Hold Violations:        0.00
+  -----------------------------------
+
+
+  Cell Count
+  -----------------------------------
+  Hierarchical Cell Count:          0
+  Hierarchical Port Count:          0
+  Leaf Cell Count:               3902
+  Buf/Inv Cell Count:             191
+  Buf Cell Count:                  14
+  Inv Cell Count:                 177
+  CT Buf/Inv Cell Count:            0
+  Combinational Cell Count:      2594
+  Sequential Cell Count:         1308
+  Macro Count:                      0
+  -----------------------------------
+
+
+  Area
+  -----------------------------------
+  Combinational Area:     6449.412325
+  Noncombinational Area: 11967.641256
+  Buf/Inv Area:            277.525249
+  Total Buffer Area:            38.38
+  Total Inverter Area:         239.15
+  Macro/Black Box Area:      0.000000
+  Net Area:              11654.026868
+  -----------------------------------
+  Cell Area:             18417.053581
+  Design Area:           30071.080449
+
+
+  Design Rules
+  -----------------------------------
+  Total Number of Nets:          4728
+  Nets With Violations:             2
+  Max Trans Violations:             0
+  Max Cap Violations:               2
+  -----------------------------------
+
+
+  Hostname: auto.ece.pdx.edu
+
+  Compile CPU Statistics
+  -----------------------------------------
+  Resource Sharing:                    1.63
+  Logic Optimization:                 15.77
+  Mapping Optimization:               10.54
+  -----------------------------------------
+  Overall Compile Time:               46.76
+  Overall Compile Wall Clock Time:    31.62
+
+  --------------------------------------------------------------------
+
+  Design  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+
+  Design (Hold)  WNS: 0.00  TNS: 0.00  Number of Violating Paths: 0
+
+  --------------------------------------------------------------------
+
+
+1
