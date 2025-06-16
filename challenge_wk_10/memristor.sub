@@ -1,0 +1,23 @@
+* HP Memristor SPICE Model  
+* Created by Zdenek and Dalibor Biolek
+.SUBCKT memristor Plus Minus PARAMS: Ron=1K Roff=100K Rinit=80K D=10N uv=10F p=1
+
+* Differential Equation Modeling
+Gx 0 x value={ I(Emem)*uv*Ron/D^2*f(V(x),p) }
+Cx x 0 1 IC={(Roff-Rinit)/(Roff-Ron)}
+Raux x 0 1T
+
+* Resistive Port
+Emem Plus aux value={-I(Emem)*V(x)*(Roff-Ron)}
+Roff aux Minus {Roff}
+
+* Flux and Charge Computation
+* Eflux flux 0 value={SDT(V(Plus,Minus))}
+* Echarge charge 0 value={SDT(I(Emem))}
+
+* Joglekar Window Function
+.func f(x,p) = {1 - (2*x - 1)^(2*p)}
+
+.ENDS memristor
+
+

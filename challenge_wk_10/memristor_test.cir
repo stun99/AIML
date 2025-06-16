@@ -1,0 +1,12 @@
+* Testbench for Memristor Hysteresis
+.include memristor.sub
+V1 in 0 SIN(0 1.2 1)
+Xmem in 0 memristor Ron=100 Roff=16000 Rinit=11000 D=10n uv=10f p=10
+.tran 0.001 5
+.control
+run
+plot V(in) I(V1)
+
+.endc
+.end
+
